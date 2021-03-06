@@ -11,8 +11,9 @@
 Projeto desenvolvido durante a disciplina de Projetos de Sistemas de Informação, oferecido pela PUC Minas!</p>
 
 ## Linguagens e libs utilizadas :books:
-- [Angular](https://angular.io/)
-- [Java](https://www.java.com/pt-BR/)
+- [Angular 9](https://angular.io/)
+- [Java 11](https://www.java.com/pt-BR/)
+- [Sring Boot Framework](https://spring.io/projects/spring-boot)
 <p align="center">
      <img src="https://user-images.githubusercontent.com/30939594/109735996-74d58200-7ba2-11eb-8338-319ceb74aae9.PNG" heigth="750" width="750" align="center">
 </p>
