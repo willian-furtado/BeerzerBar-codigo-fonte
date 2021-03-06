@@ -1,6 +1,6 @@
 <h1 align="center">:beer: Beerzer Bar :beer:</h1>
 
-<img src="https://img.shields.io/github/issues/willianjoh/barzer-codigo-fonte"/> <img src="https://img.shields.io/github/forks/willianjoh/barzer-codigo-fonte"/> <img src="https://img.shields.io/github/stars/willianjoh/barzer-codigo-fonte"/>
+<img src="https://img.shields.io/github/issues/willianjoh/BeerzerBar-codigo-fonte"/> <img src="https://img.shields.io/github/forks/willianjoh/BeerzerBar-codigo-fonte"/> <img src="https://img.shields.io/github/stars/willianjoh/BeerzerBar-codigo-fonte"/>
 
 <h4 align="center"> 
 	:warning:  Status: Em desenvolvimento :warning:
