@@ -1,7 +1,6 @@
 package github.beerzer.dominio;
 
 import lombok.Data;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 

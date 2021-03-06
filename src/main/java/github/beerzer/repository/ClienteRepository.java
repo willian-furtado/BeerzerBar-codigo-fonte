@@ -1,9 +1,9 @@
 package github.beerzer.repository;
 
-import github.beerzer.dominio.Pessoa;
+import github.beerzer.dominio.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
+public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 }
