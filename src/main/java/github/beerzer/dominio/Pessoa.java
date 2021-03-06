@@ -3,9 +3,10 @@ package github.beerzer.dominio;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.validator.constraints.br.CPF;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
@@ -19,12 +20,11 @@ public class Pessoa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
+    @NotEmpty
     @Column(name = "nome", length = 150)
     private String nome;
 
     @NotNull
-    @Email
     @Column(name = "email", length = 150)
     private String email;
 
@@ -33,6 +33,7 @@ public class Pessoa {
     private String senha;
 
     @NotNull
+    @CPF
     @Column(name = "cpf", length = 11)
     private String cpf;
 
