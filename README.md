@@ -12,6 +12,7 @@ Projeto desenvolvido durante a disciplina de Projetos de Sistemas de Informaçã
 - [Angular 9](https://angular.io/)
 - [Java 11](https://www.java.com/pt-BR/)
 - [Spring Boot Framework](https://spring.io/projects/spring-boot)
+- [Node.js](https://nodejs.org/en/)
 <p align="center">
      <img src="https://user-images.githubusercontent.com/30939594/109735996-74d58200-7ba2-11eb-8338-319ceb74aae9.PNG" heigth="750" width="750" align="center">
 </p>
