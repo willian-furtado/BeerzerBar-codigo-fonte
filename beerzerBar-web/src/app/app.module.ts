@@ -1,3 +1,4 @@
+import { ClienteModule } from './cliente/cliente.module';
 import { TemplateModule } from './template/template.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,6 +15,7 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ClienteModule,
     TemplateModule,
   ],
   providers: [],
