@@ -1,0 +1,9 @@
+.background-white {
+  background-color: rgb(255, 255, 255);
+}
+
+.tamanho-logo{
+  margin: auto;
+  padding-top: 60px;
+  width: 400px;
+}
