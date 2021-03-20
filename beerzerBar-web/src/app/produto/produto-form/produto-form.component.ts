@@ -7,14 +7,13 @@ import { Produto } from '../produto';
   templateUrl: './produto-form.component.html',
   styleUrls: ['./produto-form.component.css']
 })
-export class ProdutoFormComponent implements OnInit {
+export class ProdutoFormComponent {
 
-  produto: Produto = new Produto();
+  produto: Produto;
   success: boolean = false;
 
-  constructor(private service: ProdutoService) { }
-
-  ngOnInit(): void {
+  constructor(private service: ProdutoService) {
+    this.produto = new Produto;
   }
 
   salvar() {
