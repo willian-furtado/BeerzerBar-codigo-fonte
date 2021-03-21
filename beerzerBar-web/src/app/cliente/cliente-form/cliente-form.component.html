@@ -1,40 +1,45 @@
 <h1 class="mt-4 center">Cadastro de Clientes</h1>
 <br>
 <div class="container">
-  <form>
+  <form #clienteForm="ngForm" (ngSubmit)="onSubmit()">
+
+    <div *ngIf="success" class="alert alert-success" role="alert">
+      Cadastro realizado com Sucesso!
+    </div>
+
     <div class="row">
       <div class="col-md-6">
         <div class="form-group">
           <label>Nome: *</label>
-          <input type="text" class="form-control" />
+          <input type="text" class="form-control" [(ngModel)]="cliente.nome" name="nome"/>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>CPF: *</label>
-          <input type="text" class="form-control" />
-        </div>
-      </div>
-    </div>
-    <div class="row">
       <div class="col-md-6">
         <div class="form-group">
           <label>E-mail: *</label>
-          <input type="text" class="form-control" />
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>Data de Nascimento:</label>
-          <input type="text" class="form-control" />
+          <input type="text" class="form-control" [(ngModel)]="cliente.email" name="email" />
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-6">
-          <button type="submit" class="btn btn-success">
-            <i class="fa fa-save"></i> Salvar
-          </button>
+        <div class="form-group">
+          <label>CPF: *</label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.cpf" name="cpf"/>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Data de nascimento</label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.dataNascimento" name="dataNascimento"/>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <button type="submit" class="btn btn-success" (click)="salvar()">
+          <i class="fa fa-save"></i> Salvar
+        </button>
       </div>
     </div>
   </form>
