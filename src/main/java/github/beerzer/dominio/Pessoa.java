@@ -28,11 +28,9 @@ public class Pessoa {
     @Column(name = "email", length = 150)
     private String email;
 
-    @NotNull
     @Column(name = "senha", length = 8)
     private String senha;
 
-    @NotNull
     @CPF
     @Column(name = "cpf", length = 11)
     private String cpf;
@@ -40,7 +38,6 @@ public class Pessoa {
     @Column(name = "data_Nascimento")
     private LocalDate dataNascimento;
 
-    @NotNull
     @Column(name = "tipo")
     private Long tipo;
 
