@@ -10184,6 +10184,35 @@ body {
   background-color: #343a40;
 }
 
+.sb-sidenav-amarelo {
+  background-color: #F4C573;
+  color: rgba(255, 255, 255, 0.5);
+}
+.sb-sidenav-amarelo .sb-sidenav-menu .sb-sidenav-menu-heading {
+  color: rgba(255, 255, 255, 0.25);
+}
+.sb-sidenav-amarelo .sb-sidenav-menu .nav-link {
+  color: rgba(255, 255, 255, 0.5);
+}
+.sb-sidenav-amarelo .sb-sidenav-menu .nav-link .sb-nav-link-icon {
+  color: rgba(255, 255, 255, 0.25);
+}
+.sb-sidenav-amarelo .sb-sidenav-menu .nav-link .sb-sidenav-collapse-arrow {
+  color: rgba(255, 255, 255, 0.25);
+}
+.sb-sidenav-amarelo .sb-sidenav-menu .nav-link:hover {
+  color: #fff;
+}
+.sb-sidenav-amarelo .sb-sidenav-menu .nav-link.active {
+  color: #fff;
+}
+.sb-sidenav-amarelo .sb-sidenav-menu .nav-link.active .sb-nav-link-icon {
+  color: #fff;
+}
+.sb-sidenav-amarelo .sb-sidenav-footer {
+  background-color: #343a40;
+}
+
 .sb-sidenav-light {
   background-color: #f8f9fa;
   color: #212529;
@@ -10216,4 +10245,39 @@ body {
 .aline-center{
   position: relative;
   left: 30px;
+}
+
+.cor{
+  color: #636363
+}
+
+.cor2{
+color: #000000;
+}
+
+/* Beerzer */
+.beerzer {
+position: absolute;
+width: 205.74px;
+height: 66.46px;
+left: 62.82px;
+
+font-family: Comfortaa;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 33px;
+display: flex;
+align-items: center;
+letter-spacing: -0.015em;
+
+color: #F4C573;
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+transform: rotate(0.71deg);
+}
+
+
+.bg-grey{
+  background-color: #C4C4C4 !important;
 }
