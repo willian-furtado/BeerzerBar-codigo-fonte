@@ -1,0 +1,48 @@
+<h1 class="mt-4 center">Exclusão de Clientes</h1>
+<br>
+<div class="container">
+  <form #clienteForm="ngForm" (ngSubmit)="onSubmit()">
+
+    <div *ngIf="success" class="alert alert-success" role="alert">
+      Exclusão realizada com sucesso!
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Nome: *</label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.nome" name="nome"/>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>E-mail: *</label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.email" name="email" />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>CPF: *</label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.cpf" name="cpf"/>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Data de nascimento</label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.dataNascimento" name="dataNascimento"/>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <button type="submit" class="btn btn-success-amarelo" (click)="excluir()">
+          <div class="cor2">
+            <i class="fa fa-save"></i> Excluir
+          </div>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
