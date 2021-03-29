@@ -1,0 +1,38 @@
+<section class="rCli">
+
+  <h1 class="mt-4 titles"> Relção de clientes</h1>
+
+  <div class="container-fluid">
+    <div class="tableCli">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">CPF</th>
+            <th scope="col">Data de nascimento</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cliente of clientes$ |async">
+            <td>{{cliente.id}}</td>
+            <td>{{cliente.nome}}</td>
+            <td>{{cliente.email}}</td>
+            <td>{{cliente.cpf}}</td>
+            <td>{{cliente.dataNascimento}}</td>
+            <td>
+              <div class="lbtn">
+                <button class="btn btn-outline-warning btn-sm" (click)="OnEdit(cliente.id)"  type="button">Editar </button>
+                <button class="btn btn-outline-danger btn-sm" (click)="OnDelete()" type="button">Excluir </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+</section>

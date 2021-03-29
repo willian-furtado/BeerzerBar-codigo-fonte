@@ -1,3 +1,4 @@
+import { ClienteService } from './cliente.service';
 import { ProdutoService } from './produto.service';
 import { ProdutoModule } from './produto/produto.module';
 import { NgModule } from '@angular/core';
@@ -25,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProdutoModule,
   ],
   providers: [
-    ProdutoService
+    ProdutoService,
+    ClienteService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,21 +1,31 @@
+import { ClientEditComponent } from './clientEdit/clientEdit.component';
+import { ClientDeleteComponent } from './clientDelete/clientDelete.component';
 import { ClienteFormComponent } from './cliente-form/cliente-form.component';
-import { ClienteDeleteComponent } from './cliente-delete/cliente-delete.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdmClienteComponent } from './admCliente/admCliente.component';
+
 
 const routes: Routes = [
   {
-    path: 'cliente-form',
-    component: ClienteFormComponent
+    path: 'editarCliente/:id',
+    component: ClientEditComponent
   },
   {
-    path: 'cliente-delete',
-    component: ClienteDeleteComponent
+    path: 'excluirCliente/:id',
+    component: ClientDeleteComponent  },
+  {
+    path: 'listaClientes',
+    component: AdmClienteComponent
+  },
+  {
+    path: 'cliente-form',
+    component: ClienteFormComponent
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class ClienteRoutingModule { }

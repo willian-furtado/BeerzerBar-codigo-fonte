@@ -1,0 +1,37 @@
+
+<div class="modal fade" id= "editModel" tabindex="-1" aria-labelledby="ModalEdit">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="modalLabel">
+          Edição e remoção de clientes
+        </h5>
+      </div>
+      <div class="modal-body">
+        <form formGroup ="editForm" method="post" class="text-center">
+          <div class="form-group">
+            <label>Nome:</label>
+            <input type="text" class="form-control" formControlName="nome" [value]="this.cliente.nome"/>
+          </div>
+          <div class="form-group">
+            <label>Email:</label>
+            <input type="email" class="form-control" formControlName="email" [value]="this.cliente.email"/>
+          </div>
+          <div class="form-group">
+            <label>CPF:</label>
+            <input type="text" class="form-control" formControlName="cpf" [value]="this.cliente.cpf"/>
+          </div>
+          <div class="form-group">
+            <label>Data de nascimento:</label>
+            <input type="date" class="form-control" formControlName="nome" [value]="this.cliente.dataNascimento"/>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()"> Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="Save()">Salvar</button>
+      </div>
+    </div>
+    </div>
+</div>
+
