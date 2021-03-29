@@ -65,8 +65,12 @@ export class ClientEditComponent implements OnInit {
         (
             success =>
             {
+              alert("Editado com sucesso")
               this.route.navigate(['/listaClientes']);
-            }
+            },
+            error => console.error(error),
+            () => alert("Erro ao excluir")
+
         )
       }
   }

@@ -22,13 +22,19 @@ export class AdmClienteComponent implements OnInit {
 
     this.route.params.subscribe(clientes=>this.clientes$ = this.service.mostrarCliente());
   }
-  OnEdit(id: any)
-  {
-    this.router.navigate(['editarCliente', id], {relativeTo: this.route});
-  }
-  OnDelete()
-  {
 
+  OnDelete(cliente: Cliente)
+  {
+    this.service.deleteClient(cliente.id).subscribe(
+          (sucess) => {
+            alert("Excluido com sucesso!!");
+            window.location.reload();
+          },
+          (error) => {
+            alert("Erro ao Excluir!!");
+          }
+        );
   }
-
 }
+
+

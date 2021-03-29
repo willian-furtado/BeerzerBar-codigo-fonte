@@ -1,5 +1,6 @@
 package github.beerzer.service;
 
+
 import org.springframework.stereotype.Service;
 
 @Service

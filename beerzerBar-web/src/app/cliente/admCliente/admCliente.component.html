@@ -24,8 +24,8 @@
             <td>{{cliente.dataNascimento}}</td>
             <td>
               <div class="lbtn">
-                <button class="btn btn-outline-warning btn-sm" (click)="OnEdit(cliente.id)"  type="button">Editar </button>
-                <button class="btn btn-outline-danger btn-sm" (click)="OnDelete()" type="button">Excluir </button>
+                <button class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#editModel" [routerLink]="['/editarCliente', cliente.id]">Editar </button>
+                <button class="btn btn-outline-danger btn-sm"  data-toggle="modal" data-target="#excluir"  (click)="OnDelete(cliente)">Excluir </button>
               </div>
             </td>
           </tr>
@@ -36,3 +36,5 @@
   </div>
 
 </section>
+
+

@@ -11,5 +11,8 @@ public class ProdutoDTO {
     private String nome;
     private Double preco;
     private Long quantidade;
+    public Object getQuantidade() {
+        return null;
+    }
 
 }

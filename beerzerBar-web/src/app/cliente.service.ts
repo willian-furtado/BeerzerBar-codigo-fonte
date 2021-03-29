@@ -26,11 +26,13 @@ export class ClienteService {
       return this.http.put<Cliente[]>(`http://localhost:8080/api/clientes/`+ cliente.id , cliente )
       .pipe(take(1));
     }
+    deleteClient(id: any)
+    {
+      return this.http.delete<Cliente[]>('http://localhost:8080/api/clientes/' + id);
+    }
 
     salvarCliente(cliente: Cliente): Observable<Cliente>{
      return this.http.post<Cliente>('http://localhost:8080/api/clientes', cliente);
     }
-    excluirCliente(id: number){
-     return this.http.delete<Cliente[]>('http://localhost:8080/api/clientes?id=' + id);
-    }
+
  }
