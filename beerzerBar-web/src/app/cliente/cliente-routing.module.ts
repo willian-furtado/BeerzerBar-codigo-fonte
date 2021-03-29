@@ -1,5 +1,4 @@
 import { ClientEditComponent } from './clientEdit/clientEdit.component';
-import { ClientDeleteComponent } from './clientDelete/clientDelete.component';
 import { ClienteFormComponent } from './cliente-form/cliente-form.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -11,9 +10,7 @@ const routes: Routes = [
     path: 'editarCliente/:id',
     component: ClientEditComponent
   },
-  {
-    path: 'excluirCliente/:id',
-    component: ClientDeleteComponent  },
+ 
   {
     path: 'listaClientes',
     component: AdmClienteComponent
