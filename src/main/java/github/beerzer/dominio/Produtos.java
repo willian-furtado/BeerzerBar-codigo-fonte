@@ -27,4 +27,19 @@ public class Produtos {
     @Column(name = "categoria", length = 150)
     private String categoria;
 
+    public void setNome(Object nome2) {
+    }
+
+    public void setDescricao(Object descricao2) {
+    }
+
+    public void setQuantidade(Object quantidade2) {
+    }
+
+    public void setPreco(Double valueOf) {
+    }
+
+    public void setCategoria(Object categoria2) {
+    }
+
 }

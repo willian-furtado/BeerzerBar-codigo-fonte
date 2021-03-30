@@ -12,23 +12,26 @@ export class ClienteService {
 
  constructor(private http: HttpClient){ }
 
-    mostrarCliente()
+    showClitent()
     {
       return this.http.get<Cliente[]>(`http://localhost:8080/api/clientes`,);
     }
-    clientsById(id: any)
+
+    clientsById(idCliente: any)
     {
-      return this.http.get<Cliente[]>(`http://localhost:8080/api/clientes/`+ id)
+      return this.http.get<Cliente[]>(`http://localhost:8080/api/clientes/`+ idCliente)
       .pipe(retry(1));
     }
+
     updateClient(cliente: Cliente)
     {
       return this.http.put<Cliente[]>(`http://localhost:8080/api/clientes/`+ cliente.id , cliente )
       .pipe(take(1));
     }
-    deleteClient(id: any)
+
+    deleteClient(idCliente: any)
     {
-      return this.http.delete<Cliente[]>('http://localhost:8080/api/clientes/' + id);
+      return this.http.delete<Cliente[]>('http://localhost:8080/api/clientes/' + idCliente);
     }
 
     salvarCliente(cliente: Cliente): Observable<Cliente>{

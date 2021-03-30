@@ -20,7 +20,7 @@ export class AdmClienteComponent implements OnInit {
 
   ngOnInit() {
 
-    this.route.params.subscribe(clientes=>this.clientes$ = this.service.mostrarCliente());
+    this.route.params.subscribe(clientes=>this.clientes$ = this.service.showClitent());
   }
 
   OnDelete(cliente: Cliente)

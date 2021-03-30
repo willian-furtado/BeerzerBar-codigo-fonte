@@ -1,3 +1,5 @@
+import { PedidoModule } from './pedido/pedido.module';
+import { PedidoService } from './pedido.service';
 import { ClienteService } from './cliente.service';
 import { ProdutoService } from './produto.service';
 import { ProdutoModule } from './produto/produto.module';
@@ -11,11 +13,11 @@ import { TemplateModule } from './template/template.module';
 import { HttpClientModule } from '@angular/common/http';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -24,10 +26,12 @@ import { HttpClientModule } from '@angular/common/http';
     ClienteModule,
     TemplateModule,
     ProdutoModule,
+    PedidoModule
   ],
   providers: [
     ProdutoService,
-    ClienteService
+    ClienteService,
+    PedidoService
   ],
   bootstrap: [AppComponent]
 })
