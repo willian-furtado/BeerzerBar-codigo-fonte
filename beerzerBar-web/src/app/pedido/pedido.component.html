@@ -1,37 +1,17 @@
-<h1 class="mt-4 center">Cadastro de Cliente</h1>
+<h1 class="mt-4 center">Cadastro de Pedido</h1>
 <br>
 <div class="container">
   <form #clienteForm="ngForm" (ngSubmit)="onSubmit()">
 
     <div *ngIf="success" class="alert alert-success" role="alert">
-      Cadastro realizado com Sucesso!
+      Pedido realizado com Sucesso!
     </div>
 
     <div class="row">
       <div class="col-md-6">
         <div class="form-group">
-          <label>Nome: *</label>
+          <label>Número:</label>
           <input type="text" class="form-control" [(ngModel)]="cliente.nome" name="nome"/>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>E-mail: *</label>
-          <input type="text" class="form-control" [(ngModel)]="cliente.email" name="email" />
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>CPF: *</label>
-          <input type="text" class="form-control" [(ngModel)]="cliente.cpf" name="cpf"/>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>Data de nascimento</label>
-          <input type="text" class="form-control" [(ngModel)]="cliente.dataNascimento" name="dataNascimento"/>
         </div>
       </div>
     </div>
