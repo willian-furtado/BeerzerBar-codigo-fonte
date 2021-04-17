@@ -16,6 +16,7 @@ public class ProdutoService {
         Produtos produtos = new Produtos();
         produtos.setNome(produtoDTO.getNome());
         produtos.setDescricao(produtoDTO.getDescricao());
+        produtos.setCodigo(produtoDTO.getCodigo());
         produtos.setQuantidade(produtoDTO.getQuantidade());
         produtos.setPreco(Double.valueOf(produtoDTO.getPreco()));
         produtos.setCategoria(produtoDTO.getCategoria());

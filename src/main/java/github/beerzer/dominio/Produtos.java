@@ -1,45 +1,45 @@
 package github.beerzer.dominio;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Data
+@Getter
+@Setter
 public class Produtos {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nome", length = 150)
+    @Column(nullable = false, name = "nome", length = 150)
+    @NotEmpty(message = "{campo.nome.obrigatorio}")
+    @NotNull(message = "{campo.nome.obrigatorio}")
     private String nome;
+
+    @Column(nullable = false, name = "codigo", length = 5)
+    @NotEmpty(message = "{campo.codigo.obrigatorio}")
+    private String codigo;
 
     @Column(name = "descricao", length = 150)
     private String descricao;
 
-    @Column(name = "qtd")
+    @Column(nullable = false, name = "qtd")
+    @NotNull(message = "{campo.quantidade.obrigatorio}")
     private Long quantidade;
 
-    @Column(name = "preco")
+    @Column(nullable = false, name = "preco")
+    @NotNull(message = "{campo.preco.obrigatorio}")
     private Double preco;
 
     @Column(name = "categoria", length = 150)
+    @NotEmpty(message = "{campo.categoria.obrigatorio}")
     private String categoria;
-
-    public void setNome(Object nome2) {
-    }
-
-    public void setDescricao(Object descricao2) {
-    }
-
-    public void setQuantidade(Object quantidade2) {
-    }
-
-    public void setPreco(Double valueOf) {
-    }
-
-    public void setCategoria(Object categoria2) {
-    }
 
 }

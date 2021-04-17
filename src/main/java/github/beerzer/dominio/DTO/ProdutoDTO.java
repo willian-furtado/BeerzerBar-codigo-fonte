@@ -7,24 +7,9 @@ import lombok.Setter;
 @Setter
 public class ProdutoDTO {
     private String categoria;
+    private String codigo;
     private String descricao;
     private String nome;
     private Double preco;
     private Long quantidade;
-    public Object getQuantidade() {
-        return null;
-    }
-    public Object getNome() {
-        return null;
-    }
-    public Object getDescricao() {
-        return null;
-    }
-    public String getPreco() {
-        return null;
-    }
-    public Object getCategoria() {
-        return null;
-    }
-
 }

@@ -1,5 +1,6 @@
 package github.beerzer.dominio;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,25 +21,27 @@ public class Pessoa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotEmpty
-    @Column(name = "nome", length = 150)
+    @NotEmpty(message = "{campo.nome.obrigatorio}")
+    @Column(nullable = false, name = "nome", length = 150)
     private String nome;
 
     @NotNull
-    @Column(name = "email", length = 150)
+    @Column(nullable = false, name = "email", length = 150)
     private String email;
 
-    @Column(name = "senha", length = 8)
+    @Column(nullable = false, name = "senha", length = 8)
     private String senha;
 
-    @CPF
-    @Column(name = "cpf", length = 11)
+    @CPF(message = "{campo.cpf.invalido}")
+    @NotNull(message = "{campo.cpf.obrigatorio}")
+    @Column(nullable = false, name = "cpf", length = 11)
     private String cpf;
 
     @Column(name = "data_Nascimento")
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataNascimento;
 
-    @Column(name = "tipo")
+    @Column(nullable = false, name = "tipo")
     private Long tipo;
 
 

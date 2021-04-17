@@ -1,54 +1,68 @@
-<h1 class="mt-4 center">Cadastro de Produtos</h1>
 <br>
-<div class="container">
-  <form #produtoForm="ngForm" (ngSubmit)="onSubmit()">
-
-    <div *ngIf="success" class="alert alert-success" role="alert">
-      Cadastro realizado com Sucesso!
-    </div>
-
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>Nome: *</label>
-          <input type="text" class="form-control" [(ngModel)]="produto.nome" name="nome"/>
+<div class="ui-g ui-fluid">
+  <div class="ui-g-12">
+  <p-fieldset class="ui-fieldset ui-corner-all ui-g-12" [legend]="'Produto'">
+    <form #produtoForm="ngForm" (ngSubmit)="onSubmit()">
+      <div *ngIf="success" class="alert alert-success" role="alert">
+        Cadastro realizado com Sucesso!
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Codigo: *</label>
+            <input type="text" class="form-control" [(ngModel)]="produto.codigo" name="codigo" />
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Nome: *</label>
+            <input type="text" class="form-control" [(ngModel)]="produto.nome" name="nome" />
+          </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>Descrição: *</label>
-          <input type="text" class="form-control" [(ngModel)]="produto.descricao" name="descricao" />
+      <div class="row">
+        <div class="col-md-5">
+          <div class="form-group">
+            <label>Preço: *</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">R$</span>
+              </div>
+              <input type="text" class="md-inputfield" class="form-control" [(ngModel)]="produto.preco" name="preco" aria-label="preco">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="form-group">
+            <label>Quantidade: *</label>
+            <input type="text" class="form-control" [(ngModel)]="produto.quantidade" name="quantidade" />
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>Preço: *</label>
-          <input type="text" class="form-control" [(ngModel)]="produto.preco" name="preco"/>
+      <div class="row">
+        <div class="col-md-5">
+          <div class="form-group">
+            <label>Categoria:</label>
+            <input type="text" class="form-control" [(ngModel)]="produto.categoria" name="categoria" />
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="form-group">
+            <label>Descrição: </label>
+            <input type="text" class="form-control" [(ngModel)]="produto.descricao" name="descricao" />
+          </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>Quantidade:</label>
-          <input type="text" class="form-control" [(ngModel)]="produto.quantidade" name="quantidade"/>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>Categoria:</label>
-          <input type="text" class="form-control" [(ngModel)]="produto.categoria" name="categoria"/>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-6">
           <button type="submit" class="btn btn-success-amarelo" (click)="salvar()">
             <div class="cor2">
               <i class="fa fa-save"></i> Salvar
             </div>
           </button>
+        </div>
       </div>
-    </div>
-  </form>
+    </form>
+  </p-fieldset>
+  </div>
 </div>
