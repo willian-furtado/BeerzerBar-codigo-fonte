@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from '../cliente/cliente';
+import { Pedido } from '../pedido/pedido';
 import { PedidoService } from '../pedido.service';
+import { Observable } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-pedido',
@@ -9,32 +11,43 @@ import { PedidoService } from '../pedido.service';
 })
 export class PedidoComponent implements OnInit {
 
-  constructor(private service: PedidoService) { }
+  pedidos$!: Observable<Pedido[]>;
+  teste: boolean = false;
+
+  constructor(private service: PedidoService,
+              private router: Router,
+              private route: ActivatedRoute) { }
+
 
   ngOnInit(): void {
+    this.route.params.subscribe(pedidos=>this.pedidos$ = this.service.showOrder());
   }
 
-  cliente!: Cliente;
+  pedido!: Pedido;
   success: boolean = false;
 
   salvar() {
-    this.service.save(this.cliente)
+    this.service.save(this.pedido)
        .subscribe(response => {
          this.success = true;
        });
 }
 
     excluir(id: any) {
-      this.service.deleteClient(id)
+      this.service.deletePedido(id)
           .subscribe(response => {
           //this.cliente = this.cliente.filter(item => item.id !== this.cliente.id);
-          console.log('Cliente excluido com sucesso!');
+          console.log('Pedido excluido com sucesso!');
           this.success = true;
        });
    }
 
    onSubmit(){
-    console.log(this.cliente);
+    console.log(this.pedido);
    }
+
+   abrirModal(){
+     this.teste = true;
+  }
 
 }

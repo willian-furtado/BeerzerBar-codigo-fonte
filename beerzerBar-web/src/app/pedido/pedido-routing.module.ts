@@ -1,6 +1,7 @@
 import { PedidoComponent } from '../pedido/pedido.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ModalPedidoComponent } from './modal-pedido/modal-pedido.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'pedidos',
     component: PedidoComponent
+  },
+  {
+    path: 'cadastrarPedido',
+    component: ModalPedidoComponent
   }
 ];
 

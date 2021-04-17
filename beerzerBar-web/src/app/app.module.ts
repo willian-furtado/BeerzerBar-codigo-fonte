@@ -1,3 +1,4 @@
+import { ModalPedidoModule } from './pedido/modal-pedido/modal-pedido.module';
 import { PedidoModule } from './pedido/pedido.module';
 import { PedidoService } from './pedido.service';
 import { ClienteService } from './cliente.service';
@@ -17,7 +18,6 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     HomeComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -26,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     ClienteModule,
     TemplateModule,
     ProdutoModule,
-    PedidoModule
+    PedidoModule,
+    ModalPedidoModule
   ],
   providers: [
     ProdutoService,

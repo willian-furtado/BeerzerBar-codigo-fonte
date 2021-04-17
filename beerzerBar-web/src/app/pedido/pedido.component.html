@@ -1,29 +1,72 @@
-<h1 class="mt-4 center">Cadastro de Pedido</h1>
-<br>
-<div class="container">
-  <form #clienteForm="ngForm" (ngSubmit)="onSubmit()">
-
-    <div *ngIf="success" class="alert alert-success" role="alert">
-      Pedido realizado com Sucesso!
+<section class="Pedido">
+  <h1 class="mt-4 titles"> Relação de Pedidos</h1>
+    <div class="cor2">
+       <button type="button" data-toggle="modal" data-target="#exampleModal">
+         <i class="fa fa-save"></i> Cadastrar
+       </button>
+  </div>
+  <div class="container-fluid">
+    <div class="tablePedido">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ID Pedido</th>
+            <th scope="col">ID Cliente</th>
+            <th scope="col">ID Produto</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Quantidade</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pedido of pedidos$|async">
+            <td>{{pedido.id_pedido}}</td>
+            <td>{{pedido.id_cliente}}</td>
+            <td>{{pedido.nome}}</td>
+            <td>{{pedido.quantidade}}</td>
+            <td>{{pedido.preco}}</td>
+            <td>
+              <div class="lbtn">
+                <button class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#editModel">Editar </button>
+                <button class="btn btn-outline-danger btn-sm"  data-toggle="modal" data-target="#excluir"  (click)="excluir(pedido)">Excluir </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+  </div>
+</section>
+<app-modal-pedido *ngIf="teste"></app-modal-pedido>
 
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>Número:</label>
-          <input type="text" class="form-control" [(ngModel)]="cliente.nome" name="nome"/>
-        </div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cadastrar Pedido</h5>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <button type="submit" class="btn btn-success-amarelo" (click)="salvar()">
-          <div class="cor2">
-            <i class="fa fa-save"></i> Salvar
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="pedido-name" class="col-form-label">Nome:</label>
+            <input type="text" class="form-control" required="true" id="pedido-name" placeholder="Digite o nome do pedido">
           </div>
-        </button>
+          <div class="mb-3">
+            <label for="pedido-quantiddae" class="col-form-label">Quantidade:</label>
+            <input type="number" class="form-control" required="true" id="pedido-quantidade" placeholder="Digite a quantidade do pedido">
+          </div>
+          <div class="mb-3">
+            <label for="pedido-quantiddae" class="col-form-label">Preço:</label>
+            <input type="text" class="form-control" required="true" id="pedido-quantidade" placeholder="Digite o preço do pedido">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar <i class="fas fa-ban"></i></button>
+        <button type="button" class="btn btn-success">Salvar <i class="fas fa-check"></i></button>
       </div>
     </div>
-  </form>
+  </div>
 </div>
-
