@@ -3,8 +3,6 @@ import { PedidoComponent } from '../pedido/pedido.component';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ModalPedidoModule } from './modal-pedido/modal-pedido.module';
-
 
 @NgModule({
   declarations: [
@@ -14,7 +12,6 @@ import { ModalPedidoModule } from './modal-pedido/modal-pedido.module';
     CommonModule,
     PedidoRoutingModule,
     FormsModule,
-    ModalPedidoModule
   ]
 })
 export class PedidoModule { }

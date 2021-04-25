@@ -1,4 +1,3 @@
-import { ModalPedidoModule } from './pedido/modal-pedido/modal-pedido.module';
 import { PedidoModule } from './pedido/pedido.module';
 import { PedidoService } from './pedido.service';
 import { ClienteService } from './cliente.service';
@@ -27,7 +26,6 @@ import { HttpClientModule } from '@angular/common/http';
     TemplateModule,
     ProdutoModule,
     PedidoModule,
-    ModalPedidoModule
   ],
   providers: [
     ProdutoService,
