@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './auth.service';
 import { ModalPedidoModule } from './pedido/modal-pedido/modal-pedido.module';
+=======
+>>>>>>> c9c46f77bfa3faad9ad91d10185ec80ccdebf782
 import { PedidoModule } from './pedido/pedido.module';
 import { PedidoService } from './pedido.service';
 import { ClienteService } from './cliente.service';
@@ -41,9 +44,12 @@ const maskConfigFunction: () => Partial<IConfig> = () => {
     TemplateModule,
     ProdutoModule,
     PedidoModule,
+<<<<<<< HEAD
     ModalPedidoModule,
     NgxMaskModule.forRoot(maskConfig),
     NgxMaskModule.forRoot(maskConfigFunction)
+=======
+>>>>>>> c9c46f77bfa3faad9ad91d10185ec80ccdebf782
   ],
   providers: [
     ProdutoService,

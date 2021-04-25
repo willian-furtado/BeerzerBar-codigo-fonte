@@ -9,45 +9,44 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './pedido.component.html',
   styleUrls: ['./pedido.component.css']
 })
+
 export class PedidoComponent implements OnInit {
 
   pedidos$!: Observable<Pedido[]>;
-  teste: boolean = false;
+  abrirFechar_Modal: boolean = false;
+  pedido!: Pedido;
+  success: boolean = false;
 
   constructor(private service: PedidoService,
               private router: Router,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute){ }
 
 
   ngOnInit(): void {
     this.route.params.subscribe(pedidos=>this.pedidos$ = this.service.showOrder());
   }
 
-  pedido!: Pedido;
-  success: boolean = false;
+  onSubmit(){
+    console.log(this.pedido);
+   }
+
+   abrirModal(){
+     this.abrirFechar_Modal = true;
+  }
 
   salvar() {
     this.service.save(this.pedido)
        .subscribe(response => {
          this.success = true;
        });
-}
+  }
 
-    excluir(id: any) {
+  excluir(id: any) {
       this.service.deletePedido(id)
           .subscribe(response => {
           //this.cliente = this.cliente.filter(item => item.id !== this.cliente.id);
           console.log('Pedido excluido com sucesso!');
           this.success = true;
-       });
-   }
-
-   onSubmit(){
-    console.log(this.pedido);
-   }
-
-   abrirModal(){
-     this.teste = true;
+      });
   }
-
 }

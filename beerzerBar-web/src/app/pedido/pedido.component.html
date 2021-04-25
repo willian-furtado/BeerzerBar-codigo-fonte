@@ -1,14 +1,17 @@
 <section class="Pedido">
+
+  <div *ngIf="success" class="alert alert-success" role="alert">
+    Cadastro do pedido realizado com Sucesso!
+  </div>
+
   <h1 class="mt-4 titles"> Relação de Pedidos</h1>
     <div class="cor2">
-       <button type="button" data-toggle="modal" data-target="#exampleModal">
-         <i class="fa fa-save"></i> Cadastrar
-       </button>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-pedido">Cadastrar</button>
   </div>
   <div class="container-fluid">
     <div class="tablePedido">
-      <table class="table table-hover">
-        <thead>
+      <table class="table table-bordered">
+        <thead class="thead-dark">
           <tr>
             <th scope="col">ID Pedido</th>
             <th scope="col">ID Cliente</th>
@@ -38,9 +41,10 @@
     </div>
   </div>
 </section>
-<app-modal-pedido *ngIf="teste"></app-modal-pedido>
+<app-pedido *ngIf="abrirFechar_Modal"></app-pedido>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="modal fade" id="modal-pedido" tabindex="-1" aria-labelledby="modal-pedido" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
