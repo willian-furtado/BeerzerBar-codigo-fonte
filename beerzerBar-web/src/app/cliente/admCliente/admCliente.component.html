@@ -1,7 +1,8 @@
+
 <section class="rCli">
 
   <h1 class="mt-4 titles"> Relação de clientes</h1>
-
+  <a class="inclui" [routerLink]="['/clientes']"><i class="fas fa-plus-circle"></i></a>
   <div class="container-fluid">
     <div class="tableCli">
       <table class="table table-hover">
@@ -24,17 +25,30 @@
             <td>{{cliente.dataNascimento}}</td>
             <td>
               <div class="lbtn">
-                <button class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#editModel" [routerLink]="['/editarCliente', cliente.id]">Editar </button>
-                <button class="btn btn-outline-danger btn-sm"  data-toggle="modal" data-target="#excluir"  (click)="OnDelete(cliente)">Excluir </button>
+                <button class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#clienteModal" [routerLink]="['/clientes', cliente.id]">Editar </button>
+                <button class="btn btn-outline-danger btn-sm"  data-toggle="modal" data-target="#excluir" (click)="OnDelete(cliente)">Excluir </button>
               </div>
             </td>
           </tr>
         </tbody>
       </table>
-
     </div>
   </div>
-
 </section>
-
-
+<!--div class="modal" tabindex="-1" role="dialog" id="excluir">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Excluir?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+      </div>
+      <div class="modal-body">
+        <p>Você deseja mesmo excluir?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="Set()" > Excluir </button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"> Fechar </button>
+      </div>
+    </div>
+  </div>
+</div!-->

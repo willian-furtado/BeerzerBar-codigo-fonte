@@ -1,0 +1,32 @@
+{
+  "clientes": [
+    {
+      "nome": "ze das telhas ",
+      "email": "zezinhotransao@outlook.com",
+      "cpf": "59784621833",
+      "dataNascimento": "2021-04-24",
+      "id": 3
+    },
+    {
+      "nome": "judsclei",
+      "email": "joberson@gmail.com",
+      "cpf": "56484444445",
+      "dataNascimento": "2021-04-24",
+      "id": 4
+    },
+    {
+      "nome": "disney da silva",
+      "email": "disney@puc.com.br",
+      "cpf": "12345678996",
+      "dataNascimento": "2021-04-24",
+      "id": 5
+    },
+    {
+      "nome": "joberson",
+      "email": "joberson@gmail.com",
+      "cpf": "15975312364",
+      "dataNascimento": "2021-04-25",
+      "id": 6
+    }
+  ]
+}

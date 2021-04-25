@@ -1,4 +1,3 @@
-import { ClientEditComponent } from './clientEdit/clientEdit.component';
 import { ClienteFormComponent } from './cliente-form/cliente-form.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -7,16 +6,15 @@ import { AdmClienteComponent } from './admCliente/admCliente.component';
 
 const routes: Routes = [
   {
-    path: 'editarCliente/:id',
-    component: ClientEditComponent
-  },
- 
-  {
-    path: 'listaClientes',
+    path: 'painelClientes',
     component: AdmClienteComponent
   },
   {
-    path: 'cliente-form',
+    path: 'clientes',
+    component: ClienteFormComponent
+  },
+  {
+    path: 'clientes/:id',
     component: ClienteFormComponent
   }
 ];

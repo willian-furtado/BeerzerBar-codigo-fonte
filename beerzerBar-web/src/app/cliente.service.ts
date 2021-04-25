@@ -17,25 +17,26 @@ export class ClienteService {
       return this.http.get<Cliente[]>(`http://localhost:8080/api/clientes`,);
     }
 
-    clientsById(idCliente: any)
+    clientsById(id :number)
     {
-      return this.http.get<Cliente[]>(`http://localhost:8080/api/clientes/`+ idCliente)
+      return this.http.get<Cliente[]>(`http://localhost:8080/api/clientes/${id}`)
       .pipe(retry(1));
     }
 
-    updateClient(cliente: Cliente)
+    updateClient(id: number, cliente:any )
     {
-      return this.http.put<Cliente[]>(`http://localhost:8080/api/clientes/`+ cliente.id , cliente )
+      return this.http.put<Cliente[]>(`http://localhost:8080/api/clientes/${id}`, cliente )
       .pipe(take(1));
     }
 
-    deleteClient(idCliente: any)
+    deleteClient(cliente: Cliente)
     {
-      return this.http.delete<Cliente[]>('http://localhost:8080/api/clientes/' + idCliente);
+      return this.http.delete<Cliente[]>(`http://localhost:8080/api/clientes/` + cliente.id);
     }
 
     salvarCliente(cliente: Cliente): Observable<Cliente>{
      return this.http.post<Cliente>('http://localhost:8080/api/clientes', cliente);
     }
+
 
  }
