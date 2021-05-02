@@ -1,23 +1,20 @@
-import { PedidoComponent } from '../pedido/pedido.component';
-import { NgModule, Component } from '@angular/core';
+import { PedidoComponent } from './pedido-Form/pedido.component';
+import { AdmPedidoComponent } from './admPedido/admPedido.component';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'obterPedidos',
-    component:PedidoComponent
-  },
-  {
-    path: 'obterPedido:/id',
-    component: PedidoComponent
+    path: 'painelPedidos',
+    component: AdmPedidoComponent
   },
   {
     path: 'pedidos',
     component: PedidoComponent
   },
   {
-    path: 'cadastrarPedido',
-    component: PedidoComponent
+    path: 'pedidos/:id',
+    component: AdmPedidoComponent
   }
 ];
 

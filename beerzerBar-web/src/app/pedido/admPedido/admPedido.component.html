@@ -1,0 +1,39 @@
+  <h1 class="mt-4 titles"> Relação de Pedidos</h1>
+    <div class="cor2">
+      <a class="inclui" [routerLink]="['/pedidos']"><i class="fas fa-plus-circle"></i></a>
+  </div>
+  <div class="container-fluid">
+    <div class="tablePedido">
+      <table class="table table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID Pedido</th>
+            <th scope="col">ID Cliente</th>
+            <th scope="col">ID Funcionário</th>
+            <th scope="col">ID Produto</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Quantidade</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Data/Hora</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pedido of pedidos$|async">
+            <td>{{pedido.id_pedido}}</td>
+            <td>{{pedido.id_cliente}}</td>
+            <td>{{pedido.id_funcionario}}</td>
+            <td>{{pedido.nome}}</td>
+            <td>{{pedido.quantidade}}</td>
+            <td>{{pedido.preco}}</td>
+            <td>
+              <div class="lbtn">
+                <button class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#editModel" (click)="OnEdit(pedido)">Editar </button>
+                <button class="btn btn-outline-danger btn-sm"  data-toggle="modal" data-target="#excluir"  (click)="OnDelete(pedido)">Excluir </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
