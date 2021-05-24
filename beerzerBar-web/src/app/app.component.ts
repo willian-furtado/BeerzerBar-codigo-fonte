@@ -1,4 +1,6 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { AuthService } from './auth.service';
+import { DataTablesModule } from 'angular-datatables';
+import { Component, AfterViewInit, OnInit } from '@angular/core';
 import * as jQuery from 'jquery';
 
 @Component({
@@ -9,6 +11,17 @@ import * as jQuery from 'jquery';
 
 export class AppComponent implements AfterViewInit {
 
+  mostrarPage:boolean =false;
+
+  constructor(private auth: AuthService)
+  {}
+  ngOnInit(): void {
+
+    this.auth.mostrarConteudo.subscribe(
+      mostraInfo=> this.mostrarPage= mostraInfo
+    )
+
+  }
   ngAfterViewInit(){
       (function($) {
         'use strict';
@@ -21,7 +34,8 @@ export class AppComponent implements AfterViewInit {
         $('#sidebarToggle').on('click', function(e) {
             e.preventDefault();
             $('body').toggleClass('sb-sidenav-toggled');
-        });
+        })
+
       })(jQuery);
     }
 

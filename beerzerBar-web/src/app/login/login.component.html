@@ -1,51 +1,35 @@
-<div class="container">
-  <header>Beerzer bar</header>
-  <form>
-    <div class="input-field">
-      <input type="text" required>
-      <label>Email</label>
-    </div>
-    <div class="input-field">
-      <input class="pswrd" type="password" required>
-      <span class="show">SHOW</span>
-      <label>Senha</label>
-    </div>
-    <div class="button">
-      <div class="inicio">
+<section class="loginBody">
+  <main class="form-signin">
+    <form [formGroup]="loginForm">
+      <div class="imgl">
+        <img class="mb-4" src="assets/beer_mug_alcohol_drink_beverage_pub_icon_150779.png" alt="" width="75" height="70">
+        <img class="mb-4" src="assets/logo.svg" alt="" width="150" height="90">
       </div>
-      <button>ENTRAR</button>
-    </div>
-    <div class="button">
-      <div class="inner">
+      <div class="form-floating">
+        <input type="email" class="form-control input-field" formControlName="email" placeholder="name@example.com" [value]="this.pessoa?.email" required>
+        <label for="floatingInput"><i class="bi bi-person"></i> Email</label>
       </div>
-      <button>CADASTRAR-SE</button>
-    </div>
-  </form>
-  <div class="auth">
-    Ou entre pelo:</div>
-  <div class="links">
-    <div class="facebook">
-      <i class="fab fa-facebook-square"><span>Facebook</span></i>
-    </div>
-    <div class="google">
-      <i class="fab fa-google-plus-square"><span>Google</span></i>
-    </div>
-  </div>
-</div>
-<script>
-      var input = document.querySelector('.pswrd');
-      var show = document.querySelector('.show');
-      show.addEventListener('click', active);
-      function active(){
-        if(input.type === "password"){
-          input.type = "text";
-          show.style.color = "#1DA1F2";
-          show.textContent = "HIDE";
-        }else{
-          input.type = "password";
-          show.textContent = "SHOW";
-          show.style.color = "#111";
-        }
-      }
-    </script>
+      <div class="form-floating">
+        <input type="password" class="form-control input-field" formControlName="senha" placeholder="Password" [value]="this.pessoa?.senha" required>
+        <label for="floatingPassword"><i class="bi bi-lock"></i> Senha</label>
+      </div>
 
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Lembrar senha
+        </label>
+      </div>
+      <div class="login-btn">
+        <button class="w-48 btn btn-md con" type="submit" (click)="login()">Entrar <i class="fas fa-external-link-alt"></i></button>
+        <button class="w-48 btn btn-md btn-warning" type="submit">Inscreva-se</button>
+      </div>
+    <p class="mt-3 mb-2 text-muted">Ou conecte-se:</p>
+
+    <div class="links">
+      <a href=""><i class="bi bi-facebook"><span>Facebook</span></i></a>
+      <a href=""><i class="bi bi-google"><span>Google</span></i></a>
+
+  </div>
+    </form>
+  </main>
+</section>

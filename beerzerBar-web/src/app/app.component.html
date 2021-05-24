@@ -1,6 +1,6 @@
-<app-navbar></app-navbar>
-<div id="layoutSidenav">
-  <app-sidebar></app-sidebar>
+<app-navbar *ngIf="mostrarPage"></app-navbar>
+<div *ngIf="mostrarPage" id="layoutSidenav">
+  <app-sidebar ></app-sidebar>
   <div id="layoutSidenav_content">
     <main>
       <div class="container-fluid">
@@ -10,3 +10,7 @@
     <app-footer></app-footer>
   </div>
 </div>
+<div class="container-fluid">
+  <app-login></app-login>
+</div>
+

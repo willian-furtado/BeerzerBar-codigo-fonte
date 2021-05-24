@@ -1,10 +1,7 @@
-<<<<<<< HEAD
-
-import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './guards/auth.guard';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PessoaModule } from './pessoa/pessoa.module';
 import { AuthService } from './auth.service';
-import { ModalPedidoModule } from './pedido/modal-pedido/modal-pedido.module';
-=======
->>>>>>> c9c46f77bfa3faad9ad91d10185ec80ccdebf782
 import { PedidoModule } from './pedido/pedido.module';
 import { PedidoService } from './pedido.service';
 import { ClienteService } from './cliente.service';
@@ -19,6 +16,9 @@ import { HomeComponent } from './home/home.component';
 import { TemplateModule } from './template/template.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxMaskModule, IConfig, INITIAL_CONFIG } from 'ngx-mask';
+import { DataTablesModule } from 'angular-datatables';
+import { LoginComponent } from './login/login.component';
+
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -34,7 +34,7 @@ const maskConfigFunction: () => Partial<IConfig> = () => {
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,19 +44,21 @@ const maskConfigFunction: () => Partial<IConfig> = () => {
     TemplateModule,
     ProdutoModule,
     PedidoModule,
-<<<<<<< HEAD
-    ModalPedidoModule,
+    DataTablesModule,
+    PessoaModule,
+    FormsModule,
+    ReactiveFormsModule,
     NgxMaskModule.forRoot(maskConfig),
     NgxMaskModule.forRoot(maskConfigFunction)
-=======
->>>>>>> c9c46f77bfa3faad9ad91d10185ec80ccdebf782
+
   ],
   providers: [
     ProdutoService,
     ClienteService,
     PedidoService,
     AuthService,
-    [{provide: LOCALE_ID, useValue: 'pt-BR'}],
+    AuthGuard,
+    [{provide: LOCALE_ID, useValue: 'pt-br'}],
   ],
   bootstrap: [AppComponent]
 })

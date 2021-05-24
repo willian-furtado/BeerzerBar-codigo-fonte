@@ -1,3 +1,4 @@
+
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './../home/home.component';
 import { NgModule } from '@angular/core';
@@ -13,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
     NavbarComponent,
     SidebarComponent,
     FooterComponent,
+
   ],
   imports: [
     RouterModule,
@@ -21,7 +23,8 @@ import { FooterComponent } from './footer/footer.component';
   exports: [
     NavbarComponent,
     SidebarComponent,
-    FooterComponent
+    FooterComponent,
+
   ]
 })
 export class TemplateModule { }

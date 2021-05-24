@@ -1,32 +1,29 @@
 {
-  "clientes": [
+  "pessoa": [
     {
-      "nome": "ze das telhas ",
-      "email": "zezinhotransao@outlook.com",
-      "cpf": "59784621833",
-      "dataNascimento": "2021-04-24",
-      "id": 3
-    },
-    {
-      "nome": "judsclei",
+      "id": 1,
+      "nome": "joberson",
       "email": "joberson@gmail.com",
-      "cpf": "56484444445",
-      "dataNascimento": "2021-04-24",
-      "id": 4
-    },
-    {
-      "nome": "disney da silva",
-      "email": "disney@puc.com.br",
-      "cpf": "12345678996",
-      "dataNascimento": "2021-04-24",
-      "id": 5
-    },
+      "senha": "123456789",
+      "cpf": "15975312364",
+      "dataNascimento": "1995-12-25",
+      "tipo": "c"
+    }
+  ],
+  "clientes": [
     {
       "nome": "joberson",
       "email": "joberson@gmail.com",
       "cpf": "15975312364",
-      "dataNascimento": "2021-04-25",
+      "dataNascimento": "1995-12-25",
       "id": 6
+    },
+    {
+      "nome": "disney",
+      "email": "disneychanel@disney.com",
+      "cpf": "75395112354",
+      "dataNascimento": "2021-05-11",
+      "id": 7
     }
   ]
 }
