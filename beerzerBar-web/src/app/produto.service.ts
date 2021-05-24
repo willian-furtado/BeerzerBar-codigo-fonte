@@ -33,9 +33,9 @@ export class ProdutoService {
      return this.http.delete<Produto[]>('http://localhost:8080/api/produtos/' + id);
    }
 
-   updateProduct(produto: Produto)
+   updateProduct(idProduto:number, produto: Produto)
   {
-    return this.http.put<Produto[]>(`http://localhost:8080/api/clientes/`+ produto.id, produto )
+    return this.http.put<Produto[]>(`http://localhost:8080/api/clientes/${idProduto}`, produto)
     .pipe(take(1));
   }
 }

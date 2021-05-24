@@ -34,20 +34,20 @@ export class PedidoService {
      }
 
      /*Obter pedido feito por um cliente*/
-     getOrderByPedido(idPedido: any){
-         return this.http.get<Pedido[]>(`http://localhost:8080/api/pedidos/${idPedido}/pedidos`)
-                           .toPromise()
-                           .then((response) => response);
-     }
+     ordersById(id :number)
+    {
+      return this.http.get<Pedido[]>(`http://localhost:8080/api/pedidos/${id}`)
+      .pipe(retry(1));
+    }
 
      deletePedido(id: any)
      {
        return this.http.delete<Pedido[]>('http://localhost:8080/api/pedidos/' + id);
      }
 
-     updatePedido(pedido: Pedido)
-    {
-      return this.http.put<Pedido[]>(`http://localhost:8080/api/clientes/`+ pedido.id_pedido, pedido )
+     updatePedido(idPedido:number, pedido: Pedido )
+     {
+      return this.http.put<Pedido[]>(`http://localhost:8080/api/clientes/${idPedido}`, pedido )
       .pipe(take(1));
     }
 }

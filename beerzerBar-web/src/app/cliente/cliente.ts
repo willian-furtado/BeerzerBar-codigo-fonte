@@ -4,5 +4,4 @@ export class Cliente{
   public email?: string;
   public cpf?: string;
   public dataNascimento?: string;
-
 }

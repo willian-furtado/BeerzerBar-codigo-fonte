@@ -1,5 +1,6 @@
-import { PedidoComponent } from '../pedido/pedido.component';
-import { NgModule, Component } from '@angular/core';
+import { PedidoComponent } from './pedido-Form/pedido.component';
+import { AdmPedidoComponent } from './admPedido/admPedido.component';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../guards/auth.guard';
 
