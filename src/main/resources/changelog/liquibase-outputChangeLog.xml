@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="willi (generated)" id="1622069040670-1">
+        <createSequence sequenceName="cliente_id_seq"/>
+    </changeSet>
+    <changeSet author="willi (generated)" id="1622069040670-2">
+        <createSequence sequenceName="funcionario_id_seq"/>
+    </changeSet>
+    <changeSet author="willi (generated)" id="1622069040670-3">
+        <createSequence sequenceName="gerente_id_seq"/>
+    </changeSet>
+    <changeSet author="willi (generated)" id="1622069040670-4">
+        <createSequence sequenceName="pessoa_id_seq"/>
+    </changeSet>
+    <changeSet author="willi (generated)" id="1622069040670-5">
+        <createSequence sequenceName="produtos_id_seq"/>
+    </changeSet>
+    <changeSet author="willi (generated)" id="1622069040670-6">
+        <createSequence sequenceName="usuario_id_seq"/>
+    </changeSet>
+    <changeSet author="willi (generated)" id="1622069040670-7">
+        <createTable tableName="cliente">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="cliente_pkey"/>
+            </column>
+            <column name="id_pessoa" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="willi (generated)" id="1622069040670-8">
+        <createTable tableName="funcionario">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="funcionario_pkey"/>
+            </column>
+            <column name="matricula" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_pessoa" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="willi (generated)" id="1622069040670-9">
+        <createTable tableName="gerente">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="gerente_pkey"/>
+            </column>
+            <column name="matricula" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_pessoa" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="willi (generated)" id="1622069040670-10">
+        <createTable tableName="pessoa">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="pessoa_pkey"/>
+            </column>
+            <column name="cpf" type="VARCHAR(11)"/>
+            <column name="data_nascimento" type="date"/>
+            <column name="email" type="VARCHAR(150)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nome" type="VARCHAR(150)"/>
+            <column name="senha" type="VARCHAR(8)"/>
+            <column name="tipo" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="willi (generated)" id="1622069040670-11">
+        <createTable tableName="produtos">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="produtos_pkey"/>
+            </column>
+            <column name="categoria" type="VARCHAR(150)"/>
+            <column name="descricao" type="VARCHAR(150)"/>
+            <column name="nome" type="VARCHAR(150)"/>
+            <column name="preco" type="FLOAT8"/>
+            <column name="qtd" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="willi (generated)" id="1622069040670-12">
+        <createTable tableName="usuario">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="usuario_pkey"/>
+            </column>
+            <column name="email" type="VARCHAR(100)"/>
+            <column name="password" type="VARCHAR(8)"/>
+            <column name="username" type="VARCHAR(100)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="willi (generated)" id="1622069040670-13">
+        <addForeignKeyConstraint baseColumnNames="id_pessoa" baseTableName="gerente" constraintName="fkarskegl41r6bbajd6v4o0ordh" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="pessoa"/>
+    </changeSet>
+    <changeSet author="willi (generated)" id="1622069040670-14">
+        <addForeignKeyConstraint baseColumnNames="id_pessoa" baseTableName="cliente" constraintName="fkbjwqfll0hhesxqhyjaombdnj1" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="pessoa"/>
+    </changeSet>
+    <changeSet author="willi (generated)" id="1622069040670-15">
+        <addForeignKeyConstraint baseColumnNames="id_pessoa" baseTableName="funcionario" constraintName="fkmflfgc1pxngkqvujs5c0rq4wm" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="pessoa"/>
+    </changeSet>
+    <changeSet id="1622069040670-16" author="willi">
+        <insert tableName="usuario">
+            <column name="username" value="admin"/>
+            <column name="password" value="admin"/>
+            <column name="email" value="admin@gmail.com.br"/>
+        </insert>
+    </changeSet>
+    <changeSet id="1622069040670-17" author="willian">
+        <addNotNullConstraint tableName="usuario" columnName="username"></addNotNullConstraint>
+        <addNotNullConstraint tableName="usuario" columnName="password"></addNotNullConstraint>
+    </changeSet>
+</databaseChangeLog>
