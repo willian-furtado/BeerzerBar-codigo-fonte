@@ -17,7 +17,7 @@ export class AppComponent implements AfterViewInit {
   {}
   ngOnInit(): void {
 
-    this.auth.mostrarConteudo.subscribe(
+   this.auth.mostrarConteudo.subscribe(
       mostraInfo=> this.mostrarPage= mostraInfo
     )
 

@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve --proxy-config proxy.conf.js",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -12,7 +12,7 @@
   "private": true,
   "dependencies": {
     "-": "0.0.1",
-    "@angular/animations": "~11.2.5",
+    "@angular/animations": "^11.2.14",
     "@angular/common": "~11.2.5",
     "@angular/compiler": "~11.2.5",
     "@angular/core": "~11.2.5",
@@ -23,13 +23,16 @@
     "@types/jquery": "^3.5.5",
     "angular-datatables": "^11.1.2",
     "bootstrap": "^4.3.1",
+    "classlist.js": "^1.1.20150312",
     "datatables.net": "^1.10.20",
     "datatables.net-dt": "^1.10.20",
     "jquery": "^3.4.1",
+    "jwt-decode": "^3.1.2",
     "ngx-mask": "^11.1.5",
     "rxjs": "~6.6.0",
     "save": "^2.4.0",
     "tslib": "^2.0.0",
+    "web-animations-js": "^2.3.2",
     "zone.js": "~0.11.3"
   },
   "devDependencies": {

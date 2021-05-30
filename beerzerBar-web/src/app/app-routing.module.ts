@@ -1,5 +1,9 @@
+import { InicioComponent } from './areaCliente/inicio/inicio.component';
+import { NovaContaComponent } from './areaCliente/login/nova-conta/nova-conta.component';
+import { LoginComponent } from './areaCliente/login/login.component';
+
 import { AuthGuard } from './guards/auth.guard';
-import { LoginComponent } from './login/login.component';
+
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -11,8 +15,13 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'login',
-    component: LoginComponent
+    path: '', component: InicioComponent,
+    children:
+    [
+      {path: '', redirectTo: 'login', pathMatch: 'full' },
+      {path: 'login', component: LoginComponent},
+      {path: 'create-account', component: NovaContaComponent}
+    ]
   }
 ];
 

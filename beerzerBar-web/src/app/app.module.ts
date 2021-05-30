@@ -1,3 +1,5 @@
+import { NovaContaComponent } from './areaCliente/login/nova-conta/nova-conta.component';
+import { LoginComponent } from './areaCliente/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PessoaModule } from './pessoa/pessoa.module';
@@ -17,8 +19,8 @@ import { TemplateModule } from './template/template.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxMaskModule, IConfig, INITIAL_CONFIG } from 'ngx-mask';
 import { DataTablesModule } from 'angular-datatables';
-import { LoginComponent } from './login/login.component';
-
+import { InicioComponent } from './areaCliente/inicio/inicio.component';
+import { httpInterceptorProviders } from './interceptors/intercptors';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -34,7 +36,9 @@ const maskConfigFunction: () => Partial<IConfig> = () => {
   declarations: [
     AppComponent,
     HomeComponent,
+    InicioComponent,
     LoginComponent,
+    NovaContaComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +62,7 @@ const maskConfigFunction: () => Partial<IConfig> = () => {
     PedidoService,
     AuthService,
     AuthGuard,
+    httpInterceptorProviders,
     [{provide: LOCALE_ID, useValue: 'pt-br'}],
   ],
   bootstrap: [AppComponent]
