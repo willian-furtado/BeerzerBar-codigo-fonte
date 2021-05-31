@@ -9,17 +9,17 @@ const routes: Routes = [
   {
     path: 'painelClientes',
     component: AdmClienteComponent,
-    canActivate: [AuthGuard]
+   // canActivate: [AuthGuard]
   },
   {
     path: 'clientes',
     component: ClienteFormComponent,
-    canActivate: [AuthGuard]
+  //  canActivate: [AuthGuard]
   },
   {
     path: 'clientes/:id',
     component: ClienteFormComponent,
-    canActivate: [AuthGuard]
+   // canActivate: [AuthGuard]
   }
 ];
 

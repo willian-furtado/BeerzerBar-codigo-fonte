@@ -32,7 +32,18 @@
           </nav>
         </div>
       </div>
-
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFuncionarios" aria-expanded="false" aria-controls="collapseFuncionarios">
+        <div class="sb-nav-link-icon"><i class="bi bi-person-badge"></i></div>
+        Funcionarios
+        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+    </a>
+    <div class="collapse" id="collapseFuncionarios" aria-labelledby="headingThree" data-parent="#sidenavAccordion">
+      <div id="collapsetwo" data-toggle="collapse" aria-labelledby="headingThree" data-parent="#sidenavAccordion" data-target="collapseThree">
+        <nav class="sb-sidenav-menu-nested nav">
+          <a class="nav-link" routerLink="/painelFuncionarios">Painel de Funcionarios</a>
+        </nav>
+      </div>
+    </div>
       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePedidos" aria-expanded="false" aria-controls="collapsePedidos">
         <div class="sb-nav-link-icon"><i class="fas fa-shopping-basket"></i></div>
         Pedidos
@@ -45,7 +56,7 @@
         </nav>
       </div>
     </div>
-    
+
       </div>
     </div>
     <div class="sb-sidenav-footer">

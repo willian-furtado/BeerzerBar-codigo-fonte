@@ -1,3 +1,4 @@
+import { PessoaService } from './pessoa.service';
 import { NovaContaComponent } from './areaCliente/login/nova-conta/nova-conta.component';
 import { LoginComponent } from './areaCliente/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
@@ -21,6 +22,7 @@ import { NgxMaskModule, IConfig, INITIAL_CONFIG } from 'ngx-mask';
 import { DataTablesModule } from 'angular-datatables';
 import { InicioComponent } from './areaCliente/inicio/inicio.component';
 import { httpInterceptorProviders } from './interceptors/intercptors';
+
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -60,6 +62,7 @@ const maskConfigFunction: () => Partial<IConfig> = () => {
     ProdutoService,
     ClienteService,
     PedidoService,
+    PessoaService,
     AuthService,
     AuthGuard,
     httpInterceptorProviders,

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/auth.service';
 
@@ -12,8 +12,9 @@ import { AuthService } from 'src/app/auth.service';
 export class NovaContaComponent implements OnInit {
 
 
-  NewUserForm!: FormGroup;
-
+  newUserForm!: FormGroup;
+  cpfPatern= /^([0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}|[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2})$/;
+  sPatern= /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,}$/;
   constructor( private fb: FormBuilder,
     private reactiveform: ReactiveFormsModule,
     private route: Router,
@@ -23,6 +24,35 @@ export class NovaContaComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.newUserForm = this.fb.group({
+      nome: this.fb.group({
+        pNome: this.fb.control('', [Validators.required, Validators.minLength(3)]),
+        snome: this.fb.control('', [Validators.required, Validators.minLength(5)]),
+      }),
+      cpf: this.fb.control('', [Validators.required, Validators.minLength(11), Validators.maxLength(11),Validators.pattern(this.cpfPatern)]),
+      dataNascimento: this.fb.control('', [Validators.required, Validators.minLength(6)]),
+      email: this.fb.control('', [Validators.required, Validators.email]),
+      senha: this.fb.control('', [Validators.required, Validators.minLength(5),Validators.pattern(this.sPatern)]),
+      csenha: this.fb.control('', [Validators.required, Validators.minLength(5),Validators.pattern(this.sPatern)]),
+      tipo: ('C')
+    },{validator: this.validaSenha});
+
+  }
+  validaSenha (form: FormGroup)
+  {
+    let pass = form.controls.senha.value;
+    let confPass = form.controls.csenha.value;
+    return pass === confPass ? null : { notSame: true }
+  }
+  salvar()
+  {
+    if(this.newUserForm.valid)
+    {
+    }
+    else
+    {
+      alert(`Por favor preeencha o formulario corretamente`)
+    }
   }
 
 }

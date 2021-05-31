@@ -11,7 +11,7 @@ import * as jQuery from 'jquery';
 
 export class AppComponent implements AfterViewInit {
 
-  mostrarPage:boolean =false;
+  mostrarPage:boolean =true;
 
   constructor(private auth: AuthService)
   {}

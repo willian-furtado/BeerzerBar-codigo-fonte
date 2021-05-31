@@ -8,22 +8,22 @@ const routes: Routes = [
   {
     path: 'obterPedidos',
     component:PedidoComponent,
-    canActivate: [AuthGuard]
+   // canActivate: [AuthGuard]
   },
   {
     path: 'obterPedido:/id',
     component: PedidoComponent,
-    canActivate: [AuthGuard]
+   // canActivate: [AuthGuard]
   },
   {
     path: 'pedidos',
     component: PedidoComponent,
-    canActivate: [AuthGuard]
+   // canActivate: [AuthGuard]
   },
   {
     path: 'cadastrarPedido',
     component: PedidoComponent,
-    canActivate: [AuthGuard]
+  //  canActivate: [AuthGuard]
   }
 ];
 

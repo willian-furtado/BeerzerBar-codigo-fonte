@@ -1,1 +1,25 @@
+.hcard
+{
+  background-color: #F4C573;
+
+}
+input {
+  height: 25px;
+  border: 0;
+  width: calc(100% - 2px);
+  margin-left: 1px;
+  box-shadow: -6px 10px 0px -7px #6C6F7D, 6px 10px 0px -7px #6C6F7D;
+  -webkit-transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: -6px 10px 0px -7px #FFC107, 6px 10px 0px -7px #FFC107;
+}
+.cad-btn button
+{
+  margin: 0 0.5em 0 0;
+}
 
