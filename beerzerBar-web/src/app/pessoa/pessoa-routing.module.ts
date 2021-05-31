@@ -7,13 +7,14 @@ import { FuncionarioFormComponent } from '../funcionario/funcionario-form/funcio
 const routes : Routes = [
   {
     path: 'painelFuncionarios', component: FuncionarioComponent,
-    children:
-    [
-      { path: 'funcionario', component: FuncionarioFormComponent},
-      { path: 'funcionario/:id', component: FuncionarioComponent},
-
-    ]
+  },
+  {
+    path: 'funcionario', component: FuncionarioFormComponent
+  },
+  {
+    path: 'funcionario/:id', component: FuncionarioFormComponent
   }
+
 ];
 
 @NgModule({

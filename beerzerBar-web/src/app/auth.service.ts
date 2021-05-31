@@ -29,10 +29,20 @@ export class AuthService {
     return false;
   }
 
-  /*async createAccount(account: any) {
-    const result = await this.http.post<any>(`${environment.api}/users`, account).toPromise();
+  async createAccount(account: any) {
+    const result = await this.http.post<any>(`${API_BEERZER}`, account).toPromise();
     return result;
-  }*/
+  }
+
+  async peopleByEmail(people :any)
+  {
+    const result = await this.http.get<any>(`${API_BEERZER}`, people).toPromise();
+    if (result) {
+      return true;
+    }
+    return false;
+
+  }
 
   verificaToken() { //getAuthorizationToken
     const token = window.localStorage.getItem('token');

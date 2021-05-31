@@ -44,10 +44,27 @@ export class NovaContaComponent implements OnInit {
     let confPass = form.controls.csenha.value;
     return pass === confPass ? null : { notSame: true }
   }
-  salvar()
+  async salvar()
   {
     if(this.newUserForm.valid)
     {
+      /*
+      const resultado = await this.auth.login(this.loginForm.value);
+       alert(`Ola bom te ver novamente`)
+       this.route.navigate(['']);
+      */
+       const resultado = await this.auth.peopleByEmail(this.newUserForm.value);
+       if(!resultado)
+       {
+          const result = await this.auth.createAccount(this.newUserForm.value);
+          alert(`Conta craiada com sucesso bem vindo ao Beerzer!`)
+          this.route.navigate(['']);
+       }
+       else
+       {
+        alert(`Erro provalvelmente Voce ja esta cadastrado!`)
+        this.route.navigate(['/login']);
+       }
     }
     else
     {

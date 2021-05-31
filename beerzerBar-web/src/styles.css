@@ -10318,5 +10318,98 @@ transform: rotate(0.71deg);
 {
   font-size: 1em;
 }
+/*tabela clientes funcionario .....*/
+.tablerPeople
+{
+  font-size: 1em;
+}
+.lbtn button
+{
+  margin: 0 0.5em 0 0;
+}
+.inclui
+{
+  font-size: 4em;
+  position: fixed;
+  bottom: 70px;
+  right: 30px;
+  object-fit: cover;
+  transition: transform 0.5s ;
+}
 
+.fa-plus-circle
+{
+  color: #FFC107;
+}
+.inclui:hover
+{
 
+  transform: scale(1.2);
+}
+/*formulario pessoa cliente funcionario .......*/
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+.cancel
+{
+  margin: 1em;
+}
+.titles{
+  text-align: center;
+  padding-bottom: 1.5em;
+}
+.btn-success-amarelo{
+  color: #fff;
+  background-color: #F4C573;
+  border-color: #F4C573;
+}
+.btn-success-amarelo:hover {
+  color: #fff;
+  background-color: #D9AE62;
+  border-color: #D9AE62;
+}
+.btn-success-amarelo:focus, .btn-success-amarelo.focus {
+  color: #fff;
+  background-color: #D9AE62;
+  border-color: #D9AE62;
+  box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
+}
+.btn-success-amarelo.disabled, .btn-success-amarelo:disabled {
+  color: #fff;
+  background-color: #F4C573;
+  border-color: #F4C573;
+}
+.btn-success-amarelo:not(:disabled):not(.disabled):active, .btn-success-amarelo:not(:disabled):not(.disabled).active, .show > .btn-success-amarelo.dropdown-toggle {
+  color: #fff;
+  background-color: #D9AE62;
+  border-color: #1c7430;
+}
+.btn-success-amarelo:not(:disabled):not(.disabled):active:focus, .btn-success-amarelo:not(:disabled):not(.disabled).active:focus, .show > .btn-success-amarelo.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
+}
+.hcard
+{
+  background-color: #F4C573;
+
+}
+.formFunc input {
+  height: 25px;
+  border: 0;
+  width: calc(100% - 2px);
+  margin-left: 1px;
+  box-shadow: -6px 10px 0px -7px #6C6F7D, 6px 10px 0px -7px #6C6F7D;
+  -webkit-transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s;
+}
+
+.formFunc input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: -6px 10px 0px -7px #FFC107, 6px 10px 0px -7px #FFC107;
+}
+.cad-btn button
+{
+  margin: 0 0.5em 0 0;
+}
