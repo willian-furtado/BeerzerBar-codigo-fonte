@@ -1,12 +1,13 @@
 import { API_BEERZER } from './app.api';
-import { retry, take, map, mapTo, tap } from 'rxjs/operators';
+import { retry, take, map, mapTo, tap, concatMap } from 'rxjs/operators';
 import { Pessoa } from './pessoa/pessoa';
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable, Output } from '@angular/core';
-import { BehaviorSubject, Observable, pipe, observable } from 'rxjs';
+import { BehaviorSubject, Observable, pipe, observable, from, EMPTY, of } from 'rxjs';
 import { Router } from '@angular/router';
 import jwtDecode from 'jwt-decode';
 
+declare const FB: any;
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,14 @@ export class AuthService {
   constructor(private http: HttpClient,
               private router: Router,)
   {}
+
+  facebookLogin() {
+    return from(new Promise<any>(resolve => FB.login(resolve)))
+        .pipe(concatMap(({ authResponse }) => {
+            if (!authResponse) return EMPTY;
+            return of(authResponse.accessToken);
+        }));
+}
 
   async login(pessoa: Pessoa) {
     const resultado = await this.http.post<any>(`${API_BEERZER}` ,pessoa).toPromise();
