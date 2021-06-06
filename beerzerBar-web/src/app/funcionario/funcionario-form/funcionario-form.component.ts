@@ -2,7 +2,7 @@ import { PessoaService } from './../../pessoa.service';
 import { Pessoa } from './../../pessoa/pessoa';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-funcionario-form',
@@ -30,7 +30,7 @@ export class FuncionarioFormComponent implements OnInit {
     this.newFuncForm = this.fb.group({
       nome: this.fb.group({
         pNome: this.fb.control('', [Validators.required, Validators.minLength(3)]),
-        snome: this.fb.control('', [Validators.required, Validators.minLength(5)]),
+        sNome: this.fb.control('', [Validators.required, Validators.minLength(3)]),
       }),
       cpf: this.fb.control('', [Validators.required, Validators.minLength(11), Validators.maxLength(11),Validators.pattern(this.cpfPatern)]),
       dataNascimento: this.fb.control('', [Validators.required, Validators.minLength(6)]),
@@ -57,6 +57,7 @@ export class FuncionarioFormComponent implements OnInit {
   salvar() {
     if(this.newFuncForm.valid)
     {
+      console.log(this.newFuncForm.value)
       if(this.id == null){
       this.service.save(this.newFuncForm.value)
       .subscribe(

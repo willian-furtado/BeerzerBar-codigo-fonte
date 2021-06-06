@@ -1,3 +1,5 @@
+import { PessoaService } from './../../pessoa.service';
+import { Pessoa } from './../../pessoa/pessoa';
 
 import { ClienteService} from './../../cliente.service';
 import { Component, OnInit } from '@angular/core';
@@ -13,28 +15,33 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class ClienteFormComponent {
 
-  cliente: Cliente;
+  cliente: Pessoa;
   success: boolean = false;
-  emailPattern = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+  cpfPatern= /^([0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}|[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2})$/;
   editForm!: FormGroup;
   id!: number;
   input: any;
 
-  constructor(private service: ClienteService,
+  constructor(private service: PessoaService,
               private fb: FormBuilder,
               private reactiveform: ReactiveFormsModule,
               private route: Router,
               private router: ActivatedRoute) {
-              this.cliente = new Cliente();
+              this.cliente = new Pessoa();
   }
 
   ngOnInit() {
 
     this.editForm = this.fb.group({
-      nome: this.fb.control('', [Validators.required, Validators.minLength(5)]),
-      email: this.fb.control('', [Validators.required, Validators.pattern(this.emailPattern)]),
-      cpf: this.fb.control('', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]),
-      dataNascimento: this.fb.control('', [Validators.required, Validators.minLength(6)])
+      nome: this.fb.group({
+        pNome: this.fb.control('', [Validators.required, Validators.minLength(3)]),
+        sNome: this.fb.control('', [Validators.required, Validators.minLength(3)]),
+      }),
+      cpf: this.fb.control('', [Validators.required, Validators.minLength(11), Validators.maxLength(11),Validators.pattern(this.cpfPatern)]),
+      dataNascimento: this.fb.control('', [Validators.required, Validators.minLength(6)]),
+      email: this.fb.control('', [Validators.required, Validators.email]),
+      senha: this.fb.control(''),
+      tipo: ('C')
     });
 
     this.router.params.subscribe((data) => {
@@ -42,8 +49,7 @@ export class ClienteFormComponent {
     });
     if (this.id) {
       console.log(this.id)
-      this.service
-        .clientsById(this.id).subscribe(cliente=>
+      this.service.peopleById(this.id).subscribe(cliente=>
        this.editForm.patchValue(cliente)
     );
     }
@@ -57,7 +63,7 @@ export class ClienteFormComponent {
     if(this.editForm.valid)
     {
       if(this.id == null){
-      this.service.salvarCliente(this.editForm.value)
+      this.service.save(this.editForm.value)
       .subscribe(
         (suc)=>
         {
@@ -74,7 +80,7 @@ export class ClienteFormComponent {
       else
       {
 
-        this.service.updateClient(this.id, this.editForm.value)
+        this.service.update(this.id, this.editForm.value)
         .subscribe(
           (suc)=>
           {

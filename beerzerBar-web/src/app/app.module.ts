@@ -1,3 +1,4 @@
+import { InputComponent } from './template/input/input.component';
 import { PessoaService } from './pessoa.service';
 import { NovaContaComponent } from './areaCliente/login/nova-conta/nova-conta.component';
 import { LoginComponent } from './areaCliente/login/login.component';

@@ -1,3 +1,5 @@
+import { TemplateModule } from './../template/template.module';
+import { InputComponent } from './../template/input/input.component';
 import { FuncionarioFormComponent } from './../funcionario/funcionario-form/funcionario-form.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -12,7 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations:
   [
     FuncionarioComponent,
-    FuncionarioFormComponent
+    FuncionarioFormComponent,
   ],
   imports: [
     CommonModule,
@@ -20,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     DataTablesModule,
+    TemplateModule
   ]
 })
 export class PessoaModule { }

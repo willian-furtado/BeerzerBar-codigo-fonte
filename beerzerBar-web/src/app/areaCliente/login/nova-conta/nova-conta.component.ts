@@ -14,7 +14,7 @@ export class NovaContaComponent implements OnInit {
 
   newUserForm!: FormGroup;
   cpfPatern= /^([0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}|[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2})$/;
-  sPatern= /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,}$/;
+  sPatern= /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"/;
   constructor( private fb: FormBuilder,
     private reactiveform: ReactiveFormsModule,
     private route: Router,
@@ -27,13 +27,13 @@ export class NovaContaComponent implements OnInit {
     this.newUserForm = this.fb.group({
       nome: this.fb.group({
         pNome: this.fb.control('', [Validators.required, Validators.minLength(3)]),
-        snome: this.fb.control('', [Validators.required, Validators.minLength(5)]),
+        sNome: this.fb.control('', [Validators.required, Validators.minLength(3)]),
       }),
       cpf: this.fb.control('', [Validators.required, Validators.minLength(11), Validators.maxLength(11),Validators.pattern(this.cpfPatern)]),
       dataNascimento: this.fb.control('', [Validators.required, Validators.minLength(6)]),
       email: this.fb.control('', [Validators.required, Validators.email]),
-      senha: this.fb.control('', [Validators.required, Validators.minLength(5),Validators.pattern(this.sPatern)]),
-      csenha: this.fb.control('', [Validators.required, Validators.minLength(5),Validators.pattern(this.sPatern)]),
+      senha: this.fb.control('', [Validators.required, Validators.minLength(5)]),
+      csenha: this.fb.control('', [Validators.required, Validators.minLength(5)]),
       tipo: ('C')
     },{validator: this.validaSenha});
 
@@ -48,13 +48,8 @@ export class NovaContaComponent implements OnInit {
   {
     if(this.newUserForm.valid)
     {
-      /*
-      const resultado = await this.auth.login(this.loginForm.value);
-       alert(`Ola bom te ver novamente`)
-       this.route.navigate(['']);
-      */
        const resultado = await this.auth.peopleByEmail(this.newUserForm.value);
-       if(!resultado)
+       if(resultado)
        {
           const result = await this.auth.createAccount(this.newUserForm.value);
           alert(`Conta craiada com sucesso bem vindo ao Beerzer!`)

@@ -1,39 +1,51 @@
-<section class="formFunc">
+<section class="forms">
   <h1 class="mt-4 titles">Cadastro de Funcionarios:</h1>
   <div class="container">
       <div class="row justify-content-center">
           <div class="col-lg-12">
                   <div class="body">
-                      <form [formGroup]="newFuncForm"  method="post">
+                      <form [formGroup]="newFuncForm" method="post">
+                        <div class="form-row" formGroupName ="nome" >
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="small mb-1" for="inputFirstName">Primeiro Nome:</label>
+                              <app-input errorMessage="Formato de nome incorreto" label="pNome" >
+                                  <input class="form-control py-4" type="text" formControlName="pNome" placeholder="Nome"  required/>
+                              </app-input>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="small mb-1" for="inputLastName">Sobrenome:</label>
+                                <app-input errorMessage="Formato de sobrenome incorreto" label="sNome" >
+                                <input class="form-control py-4" type="text" formControlName="sNome" placeholder="Sobrenome"  required />
+                              </app-input>
+                            </div>
+                        </div>
+                        </div>
                           <div class="form-row">
-                              <div class="col-md-6">
-                                  <div class="form-group">
-                                      <label class="small mb-1" for="inputFirstName">Primeiro Nome:</label>
-                                      <input class="form-control py-4" type="text" formControlName="pNome" placeholder="Nome"  required />
-                                  </div>
-                              </div>
-                              <div class="col-md-6">
-                                  <div class="form-group">
-                                      <label class="small mb-1" for="inputLastName">Sobrenome:</label>
-                                      <input class="form-control py-4" type="text" formControlName="sNome" placeholder="Sobrenome"  required />
-                                  </div>
-                              </div>
                               <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="small mb-1" for="inputCPF">CPF:</label>
-                                    <input class="form-control py-4" type="text" formControlName="cpf" placeholder="CPF" [value]="this.funcionario.cpf"  mask="000.000.000-00" required />
+                                    <app-input errorMessage="CPF incorreto" label="cpf" >
+                                    <input class="form-control py-4" type="text" formControlName="cpf" placeholder="CPF" />
+                                  </app-input>
                                 </div>
                             </div>
                             <div class="col-md-6">
                               <div class="form-group">
                                   <label class="small mb-1" for="inputData">Data de Nascimento:</label>
-                                  <input class="form-control py-4" type="date" formControlName="dataNascimento" placeholder="" [value]="this.funcionario.dataNascimento" required />
+                                <app-input errorMessage="Formato de data incorreto" label="dataNascimento" >
+                                  <input class="form-control py-4" type="date" formControlName="dataNascimento" placeholder="" />
+                                </app-input>
                               </div>
                           </div>
                           </div>
                           <div class="form-group">
                               <label class="small mb-1" for="inputEmailAddress">Email:</label>
-                              <input class="form-control py-4" type="email" formControlName="email" aria-describedby="emailHelp" placeholder="E-mail" [value]="this.funcionario.email" required  />
+                            <app-input errorMessage="Formato de email incorreto" label="email" >
+                              <input class="form-control py-4" type="email" formControlName="email" aria-describedby="emailHelp" placeholder="E-mail" />
+                            </app-input>
                           </div>
                           <div class="row">
                             <div class="col-md-6 buttons">

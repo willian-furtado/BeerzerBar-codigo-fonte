@@ -1,0 +1,9 @@
+<div class="form-group" [class.has-success]="hasSuccess()"
+                        [class.has-error]="hasError()">
+  <label class="control-label sr-only" for="inputSuccess"><i class="fa fa-check"></i> {{label}}</label>
+
+  <ng-content></ng-content>
+
+  <span class="needs-validation" *ngIf="hasSuccess()"><i class="bi bi-check2-all"></i>Ok</span>
+  <span class="needs-validation" *ngIf="hasError()"><i class="bi bi-x"></i>{{errorMessage}}</span>
+</div>

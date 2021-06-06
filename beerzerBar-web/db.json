@@ -8,6 +8,31 @@
       "cpf": "15975312364",
       "dataNascimento": "1995-12-25",
       "tipo": "c"
+    },
+    {
+      "nome": {
+        "pNome": "vinicius",
+        "sNome": "castro"
+      },
+      "cpf": "15975312364",
+      "dataNascimento": "2021-06-05",
+      "email": "vinicius@gmail.com",
+      "senha": "",
+      "tipo": "F",
+      "id": 2
+    },
+    {
+      "nome": {
+        "pNome": "disney",
+        "sNome": "disneylandia"
+      },
+      "cpf": "75395112364",
+      "dataNascimento": "2000-02-09",
+      "email": "disneyteste@gmail.com",
+      "senha": "Migatenogokui@2021",
+      "csenha": "Migatenogokui@2021",
+      "tipo": "C",
+      "id": 3
     }
   ],
   "clientes": [

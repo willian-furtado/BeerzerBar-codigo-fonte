@@ -12,9 +12,10 @@ export class PessoaService {
 
   constructor(private http: HttpClient)
   {}
-  show()
+  show(search: string)
     {
-      return this.http.get<Pessoa[]>(`${API_BEERZER}`);
+      return this.http.get<Pessoa[]>(`${API_BEERZER}`,{
+      params: { tipo: search},});
     }
 
     peopleById(id :number)

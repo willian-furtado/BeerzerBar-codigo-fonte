@@ -1,48 +1,63 @@
-
-<section class="formcli">
-
-  <h1 class="mt-4 titles"> Registros de Cliente</h1>
+<section class="forms">
+  <h1 class="mt-4 titles">Cadastro de Funcionarios:</h1>
   <div class="container">
-    <form [formGroup]="editForm" method="post">
-
-      <div class="row">
-        <div class="col-md-6">
-          <div>
-            <div class="form-group">
-              <label for="validationDefault01" class="form-label">Nome:</label>
-            <input type="text"  placeholder="Nome" class="form-control" formControlName="nome" [value]="this.cliente?.nome" required/>
-            </div>
+      <div class="row justify-content-center">
+          <div class="col-lg-12">
+                  <div class="body">
+                      <form [formGroup]="editForm" method="post">
+                        <div class="form-row" formGroupName ="nome" >
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="small mb-1" for="inputFirstName">Primeiro Nome:</label>
+                              <app-input errorMessage="Formato de nome incorreto" label="pNome" >
+                                  <input class="form-control py-4" type="text" formControlName="pNome" placeholder="Nome"  required/>
+                              </app-input>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="small mb-1" for="inputLastName">Sobrenome:</label>
+                                <app-input errorMessage="Formato de sobrenome incorreto" label="sNome" >
+                                <input class="form-control py-4" type="text" formControlName="sNome" placeholder="Sobrenome"  required />
+                              </app-input>
+                            </div>
+                        </div>
+                        </div>
+                          <div class="form-row">
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="small mb-1" for="inputCPF">CPF:</label>
+                                    <app-input errorMessage="CPF incorreto" label="cpf" >
+                                    <input class="form-control py-4" type="text" formControlName="cpf" placeholder="CPF" />
+                                  </app-input>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                  <label class="small mb-1" for="inputData">Data de Nascimento:</label>
+                                <app-input errorMessage="Formato de data incorreto" label="dataNascimento" >
+                                  <input class="form-control py-4" type="date" formControlName="dataNascimento" placeholder="" />
+                                </app-input>
+                              </div>
+                          </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="small mb-1" for="inputEmailAddress">Email:</label>
+                            <app-input errorMessage="Formato de email incorreto" label="email" >
+                              <input class="form-control py-4" type="email" formControlName="email" aria-describedby="emailHelp" placeholder="E-mail" />
+                            </app-input>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6 buttons">
+                              <button type="submit" class="btn btn-success-amarelo"  [disabled]="!editForm.valid" (click)="salvar()">
+                                <div class="cor2"><i class="fa fa-save"></i> Salvar</div>
+                              </button>
+                              <button type="button" class="btn btn-secondary cancel" (click)="close()">Cancelar</button>
+                            </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
           </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="validationDefault02" class="form-label">Email:</label>
-            <input type="email" placeholder="Email" class="form-control" formControlName="email" [value]="this.cliente.email" required/>
-          </div>
-        </div>
       </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="validationDefault03" class="form-label">CPF:</label>
-            <input type="text" placeholder="CPF" class="form-control" formControlName="cpf" [value]="this.cliente.cpf"  mask="000.000.000-00" required/>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="validationDefault04" class="form-label">Data de nascimento:</label>
-            <input type="date" class="form-control" formControlName="dataNascimento" [value]="this.cliente.dataNascimento" required/>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 buttons">
-          <button type="submit" class="btn btn-success-amarelo"  [disabled]="!editForm.valid" (click)="salvar()">
-            <div class="cor2"><i class="fa fa-save"></i> Salvar</div>
-          </button>
-          <button type="button" class="btn btn-secondary cancel" (click)="close()">Cancelar</button>
-        </div>
-      </div>
-    </form>
-  </div>
 </section>

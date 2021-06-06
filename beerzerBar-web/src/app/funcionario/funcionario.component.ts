@@ -23,14 +23,13 @@ export class FuncionarioComponent implements OnInit {
 
     this.dtOptions = {
       pagingType: 'full_numbers',
-      pageLength: 2
+      pageLength: 10
     }
 
     this.route.params.subscribe(funcionarios=> {
-      this.funcionarios$ = this.service.show()
+      this.funcionarios$ = this.service.show('F')
       this.dtTrigger.next();
     });
-
   }
 
   OnDelete(funcionario: Pessoa)

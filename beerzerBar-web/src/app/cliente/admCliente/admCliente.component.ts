@@ -1,3 +1,5 @@
+import { PessoaService } from './../../pessoa.service';
+import { Pessoa } from './../../pessoa/pessoa';
 
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
@@ -16,13 +18,14 @@ import { DataTablesModule } from 'angular-datatables';
 })
 export class AdmClienteComponent implements OnInit {
 
-  clientes$!: Observable<Cliente[]>;
+  clientes$!: Observable<Pessoa[]>;
   cliente!: Cliente;
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
+  i!: Pessoa
 
 
-  constructor(private service: ClienteService,
+  constructor(private service: PessoaService,
               private router: Router,
               private route: ActivatedRoute) { }
 
@@ -34,7 +37,7 @@ export class AdmClienteComponent implements OnInit {
     }
 
     this.route.params.subscribe(clientes=> {
-      this.clientes$ = this.service.showClitent()
+      this.clientes$ = this.service.show('C')
       this.dtTrigger.next();
     });
   }
@@ -47,7 +50,7 @@ export class AdmClienteComponent implements OnInit {
 
   OnDelete(cliente: Cliente)
   {
-    this.service.deleteClient(cliente).subscribe(
+    this.service.delete(cliente).subscribe(
           (sucess) => {
             alert("Excluido com sucesso!!");
             window.location.reload();

@@ -9,47 +9,63 @@
                             <div class="hcard card-header"><h3 class="text-justify font-weight-light my-4"><strong>Cadastrar:</strong></h3></div>
                             <div class="card-body">
                                 <form [formGroup]="newUserForm">
+                                  <div class="form-row" formGroupName ="nome" >
+                                    <div class="col-md-6">
+                                      <div class="form-group">
+                                        <label class="small mb-1" for="inputFirstName">Primeiro Nome:</label>
+                                        <app-input errorMessage="Formato de nome incorreto" label="pNome" >
+                                            <input class="form-control py-4" type="text" formControlName="pNome" placeholder="Nome"  required/>
+                                        </app-input>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <div class="form-group">
+                                          <label class="small mb-1" for="inputLastName">Sobrenome:</label>
+                                          <app-input errorMessage="Formato de sobrenome incorreto" label="sNome" >
+                                          <input class="form-control py-4" type="text" formControlName="sNome" placeholder="Sobrenome"  required />
+                                        </app-input>
+                                      </div>
+                                  </div>
+                                  </div>
                                     <div class="form-row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="small mb-1" for="inputFirstName">Primeiro Nome:</label>
-                                                <input class="form-control py-4" type="text" formControlName="pNome" placeholder="Nome" />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="small mb-1" for="inputLastName">Sobrenome:</label>
-                                                <input class="form-control py-4" type="text" formControlName="sNome" placeholder="Sobrenome" />
-                                            </div>
-                                        </div>
                                         <div class="col-md-6">
                                           <div class="form-group">
                                               <label class="small mb-1" for="inputCPF">CPF:</label>
+                                              <app-input errorMessage="CPF incorreto" label="cpf" >
                                               <input class="form-control py-4" type="text" formControlName="cpf" placeholder="CPF" />
+                                            </app-input>
                                           </div>
                                       </div>
                                       <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="small mb-1" for="inputData">Data de Nascimento:</label>
+                                          <app-input errorMessage="Formato de data incorreto" label="dataNascimento" >
                                             <input class="form-control py-4" type="date" formControlName="dataNascimento" placeholder="" />
+                                          </app-input>
                                         </div>
                                     </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="small mb-1" for="inputEmailAddress">Email:</label>
+                                      <app-input errorMessage="Formato de email incorreto" label="email" >
                                         <input class="form-control py-4" type="email" formControlName="email" aria-describedby="emailHelp" placeholder="E-mail" />
+                                      </app-input>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="small mb-1" for="inputPassword">Senha:</label>
+                                              <app-input errorMessage="Formato de senha incorreto" label="senha" >
                                                 <input class="form-control py-4" type="password" formControlName="senha" placeholder="Senha" />
+                                              </app-input>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="small mb-1" for="inputConfirmPassword">Confirme a Senha:</label>
+                                              <app-input errorMessage="Formato de senha incorreto" label="csenha" >
                                                 <input class="form-control py-4" type="password" formControlName="csenha" placeholder="Confirme a Senha" />
+                                              </app-input>
                                             </div>
                                         </div>
                                     </div>

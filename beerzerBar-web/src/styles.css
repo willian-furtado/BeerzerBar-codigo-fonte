@@ -10347,6 +10347,14 @@ transform: rotate(0.71deg);
   transform: scale(1.2);
 }
 /*formulario pessoa cliente funcionario .......*/
+/*Validaçao Icones de Ok e Error*/
+.bi-check2-all{
+  color: green;
+}
+.bi-x {
+  color: red;
+}
+/*form*/
 .center {
   margin: auto;
   width: 50%;
@@ -10394,7 +10402,7 @@ transform: rotate(0.71deg);
   background-color: #F4C573;
 
 }
-.formFunc input {
+.forms input {
   height: 25px;
   border: 0;
   width: calc(100% - 2px);
@@ -10404,11 +10412,13 @@ transform: rotate(0.71deg);
   transition: box-shadow 0.3s;
 }
 
-.formFunc input:focus,
+.forms input:focus,
 textarea:focus {
   outline: none;
   box-shadow: -6px 10px 0px -7px #FFC107, 6px 10px 0px -7px #FFC107;
 }
+
+
 .cad-btn button
 {
   margin: 0 0.5em 0 0;

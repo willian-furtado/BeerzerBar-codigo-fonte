@@ -1,3 +1,4 @@
+import { TemplateModule } from './../template/template.module';
 import { DataTablesModule } from 'angular-datatables';
 import { AdmClienteComponent } from './admCliente/admCliente.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -18,6 +19,7 @@ import { ClienteFormComponent } from './cliente-form/cliente-form.component';
     FormsModule,
     ReactiveFormsModule,
     DataTablesModule,
+    TemplateModule,
   ]
 })
 export class ClienteModule { }

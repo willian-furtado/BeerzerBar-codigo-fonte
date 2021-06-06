@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
+import { InputComponent } from './input/input.component';
 
 
 
@@ -14,6 +15,7 @@ import { FooterComponent } from './footer/footer.component';
     NavbarComponent,
     SidebarComponent,
     FooterComponent,
+    InputComponent,
 
   ],
   imports: [
@@ -24,7 +26,7 @@ import { FooterComponent } from './footer/footer.component';
     NavbarComponent,
     SidebarComponent,
     FooterComponent,
-
+    InputComponent,
   ]
 })
 export class TemplateModule { }
