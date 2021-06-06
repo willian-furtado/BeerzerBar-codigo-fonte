@@ -1,57 +1,63 @@
-<section class="formPedido">
-
-  <h1 class="mt-4 titles"> Registros de Produtos</h1>
+<section class="forms">
+  <h1 class="mt-4 titles">Cadastro de Produtos:</h1>
   <div class="container">
-    <form [formGroup]="editForm" method="post">
-
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="validationDefault02" class="form-label">Preço:</label>
-            <input type="text" placeholder="Nome" class="form-control" formControlName="email" [value]="this.produto.nome" required="true"/>
+      <div class="row justify-content-center">
+          <div class="col-lg-12">
+                  <div class="body">
+                      <form [formGroup]="editForm" method="post">
+                        <div class="form-row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="small mb-1" for="inputFirstName">Nome:</label>
+                              <app-input errorMessage="Formato de nome incorreto" label="nome" >
+                                  <input class="form-control py-4" type="text" formControlName="nome" placeholder="Nome"  required/>
+                              </app-input>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="small mb-1" for="inputLastName">Preço:</label>
+                                <app-input errorMessage="Formato de preço incorreto" label="preco" >
+                                <input class="form-control py-4" type="text" formControlName="preco" placeholder="Preço"  required />
+                              </app-input>
+                            </div>
+                        </div>
+                        </div>
+                          <div class="form-row">
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="small mb-1" for="inputCPF">Quantidade:</label>
+                                    <app-input errorMessage="Quantidade Incorreta" label="cpf" >
+                                    <input class="form-control py-4" type="number" min="1" formControlName="quantidade" placeholder="Quantidade" />
+                                  </app-input>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                  <label class="small mb-1" for="inputData">Categoria:</label>
+                                <app-input errorMessage="Formato de Categoria incorreto" label="categoria" >
+                                  <input class="form-control py-4" type="text" formControlName="categoria" placeholder="Categoria" />
+                                </app-input>
+                              </div>
+                          </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="small mb-1" for="inputEmailAddress">Descrição:</label>
+                            <app-input errorMessage="Formato de Descrição incorreto" label="descricao" >
+                              <input class="form-control py-4" type="text" formControlName="descricao" placeholder="Descrição" />
+                            </app-input>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6 buttons">
+                              <button type="submit" class="btn btn-success-amarelo"  [disabled]="!editForm.valid" (click)="salvar()">
+                                <div class="cor2"><i class="fa fa-save"></i> Salvar</div>
+                              </button>
+                              <button type="button" class="btn btn-secondary cancel" (click)="close()">Cancelar</button>
+                            </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
           </div>
-        </div>
       </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="validationDefault02" class="form-label">Preço:</label>
-            <input type="text" placeholder="Preço" class="form-control" formControlName="email" [value]="this.produto.preco" required="true"/>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="validationDefault03" class="form-label">Quantidade:</label>
-            <input type="number" placeholder="Quantidade" class="form-control" formControlName="cpf" [value]="this.produto.quantidade" required="true"/>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="validationDefault03" class="form-label">Categoria:</label>
-            <input type="text" placeholder="Categoria" class="form-control" formControlName="cpf" [value]="this.produto.categoria" required="true"/>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="validationDefault03" class="form-label">Descrição:</label>
-            <input type="text" placeholder="Descrição" class="form-control" formControlName="cpf" [value]="this.produto.descricao" required="true"/>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 buttons">
-          <button type="submit" class="btn btn-success" [disabled]="!editForm.valid" (click)="salvar()">
-            <div class="cor2"><i class="fa fa-save"></i> Salvar</div>
-          </button>
-          <button type="button" class="btn btn-secondary cancel" (click)="close()">Cancelar</button>
-        </div>
-      </div>
-    </form>
-  </div>
 </section>

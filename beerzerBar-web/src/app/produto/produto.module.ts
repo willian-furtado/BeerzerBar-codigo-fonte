@@ -4,6 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProdutoRoutingModule } from './produto-routing.module';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { TemplateModule } from './../template/template.module';
+import { DataTablesModule } from 'angular-datatables';
 
 
 
@@ -16,7 +18,9 @@ import { NgModule } from '@angular/core';
     CommonModule,
     ProdutoRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TemplateModule,
+    DataTablesModule,
   ]
 })
 export class ProdutoModule { }

@@ -4,6 +4,8 @@ import { PedidoComponent } from './pedido-Form/pedido.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TemplateModule } from './../template/template.module';
+import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,10 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     PedidoRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TemplateModule,
+    DataTablesModule,
+
   ]
 })
 export class PedidoModule { }

@@ -30,9 +30,10 @@ export class ProdutoComponent implements OnInit {
 ngOnInit() {
   this.editForm = this.fb.group({
     nome: this.fb.control('', [Validators.required, Validators.minLength(5)]),
-    cpf: this.fb.control('', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]),
+    preco: this.fb.control('', [Validators.required]),
     quantidade: this.fb.control('', [Validators.required, Validators.minLength(1)]),
-    preco: this.fb.control('', [Validators.required, Validators.minLength(3)]),
+    descricao: this.fb.control('', [Validators.required, Validators.minLength(3)]),
+    categoria: this.fb.control('', [Validators.required, Validators.minLength(3)]),
   });
 }
 
@@ -45,7 +46,7 @@ ngOnInit() {
     if(this.editForm.valid)
  {
     if(this.id == null){
-       this.service.save(this.editForm.value)
+       this.service.save(this.produto)
         .subscribe(
       (suc) =>
     {

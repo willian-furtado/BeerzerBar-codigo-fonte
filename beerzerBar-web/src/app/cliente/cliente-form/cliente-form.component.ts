@@ -48,7 +48,6 @@ export class ClienteFormComponent {
       this.id = data.id;
     });
     if (this.id) {
-      console.log(this.id)
       this.service.peopleById(this.id).subscribe(cliente=>
        this.editForm.patchValue(cliente)
     );
@@ -74,7 +73,6 @@ export class ClienteFormComponent {
         {
           alert("Erro no cadastro!");
         }
-        //this.success = true;
       );
       }
       else
@@ -91,7 +89,6 @@ export class ClienteFormComponent {
           {
             alert("Erro na edição!");
           }
-          //this.success = true;
         );
       }
     }
