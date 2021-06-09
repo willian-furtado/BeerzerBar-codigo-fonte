@@ -20,7 +20,7 @@ export class AdmProdutoComponent implements OnInit {
 
   ngOnInit() {
     this.service.obterTodos().subscribe(rest => {
-      this.produtos = rest.values;
+      this.produtos = rest;
     })
   }
 

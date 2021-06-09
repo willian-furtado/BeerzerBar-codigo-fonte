@@ -1,6 +1,8 @@
 package github.beerzer.dominio;
 
 import lombok.Data;
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -12,8 +14,8 @@ public class Funcionario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
     @JoinColumn(name = "id_Pessoa")
+    @OneToOne(orphanRemoval = true, fetch = FetchType.LAZY)
     private Pessoa pessoa;
 
     @Column(name = "matricula")

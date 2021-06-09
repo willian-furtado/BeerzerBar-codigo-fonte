@@ -1,3 +1,4 @@
+import { Funcionario } from './../funcionario';
 import { PessoaService } from './../../pessoa.service';
 import { Pessoa } from './../../pessoa/pessoa';
 import { Component, OnInit } from '@angular/core';
@@ -12,17 +13,18 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } 
 export class FuncionarioFormComponent implements OnInit {
 
   newFuncForm!: FormGroup;
-  funcionario!: Pessoa;
   cpfPatern= /^([0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}|[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2})$/;
   id!: number;
   input: any;
+
+  funcionario: Funcionario = new Funcionario();
+  pessoa: Pessoa = new Pessoa();
 
   constructor(private service: PessoaService,
     private fb: FormBuilder,
     private reactiveform: ReactiveFormsModule,
     private route: Router,
     private router: ActivatedRoute) {
-    this.funcionario = new Pessoa();
 }
 
   ngOnInit(): void {
@@ -37,7 +39,7 @@ export class FuncionarioFormComponent implements OnInit {
       email: this.fb.control('', [Validators.required, Validators.email]),
       senha: this.fb.control(''),
       tipo: ('F')
-    },);
+    });
 
     this.router.params.subscribe((data) => {
       this.id = data.id;
@@ -57,13 +59,14 @@ export class FuncionarioFormComponent implements OnInit {
   salvar() {
     if(this.newFuncForm.valid)
     {
-      console.log(this.newFuncForm.value)
+      this.funcionario.pessoa = this.pessoa;
+      this.funcionario.matricula = Math.random();
       if(this.id == null){
-      this.service.save(this.newFuncForm.value)
+      this.service.save(this.funcionario)
       .subscribe(
         (suc)=>
         {
-          alert(`${suc.nome} Cadastrado com sucesso!`);
+          alert(`${this.pessoa.nome} Cadastrado com sucesso!`);
           this.close();
         },
         (err) =>

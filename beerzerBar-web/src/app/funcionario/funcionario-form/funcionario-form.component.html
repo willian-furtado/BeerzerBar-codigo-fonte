@@ -10,7 +10,7 @@
                             <div class="form-group">
                               <label class="small mb-1" for="inputFirstName">Primeiro Nome:</label>
                               <app-input errorMessage="Formato de nome incorreto" label="pNome" >
-                                  <input class="form-control py-4" type="text" formControlName="pNome" placeholder="Nome"  required/>
+                                  <input class="form-control py-4" type="text" [(ngModel)]="pessoa.nome" formControlName="pNome" placeholder="Nome"  required/>
                               </app-input>
                             </div>
                         </div>
@@ -18,7 +18,7 @@
                             <div class="form-group">
                                 <label class="small mb-1" for="inputLastName">Sobrenome:</label>
                                 <app-input errorMessage="Formato de sobrenome incorreto" label="sNome" >
-                                <input class="form-control py-4" type="text" formControlName="sNome" placeholder="Sobrenome"  required />
+                                <input class="form-control py-4" type="text" formControlName="sNome" [(ngModel)]="pessoa.sobrenome" placeholder="Sobrenome"  required />
                               </app-input>
                             </div>
                         </div>
@@ -28,7 +28,7 @@
                                 <div class="form-group">
                                     <label class="small mb-1" for="inputCPF">CPF:</label>
                                     <app-input errorMessage="CPF incorreto" label="cpf" >
-                                    <input class="form-control py-4" type="text" formControlName="cpf" placeholder="CPF" />
+                                    <input class="form-control py-4" type="text" formControlName="cpf" [(ngModel)]="pessoa.cpf" placeholder="CPF" />
                                   </app-input>
                                 </div>
                             </div>
@@ -36,7 +36,7 @@
                               <div class="form-group">
                                   <label class="small mb-1" for="inputData">Data de Nascimento:</label>
                                 <app-input errorMessage="Formato de data incorreto" label="dataNascimento" >
-                                  <input class="form-control py-4" type="date" formControlName="dataNascimento" placeholder="" />
+                                  <input class="form-control py-4" type="date" formControlName="dataNascimento" [(ngModel)]="pessoa.dataNascimento" placeholder="" />
                                 </app-input>
                               </div>
                           </div>
@@ -44,7 +44,7 @@
                           <div class="form-group">
                               <label class="small mb-1" for="inputEmailAddress">Email:</label>
                             <app-input errorMessage="Formato de email incorreto" label="email" >
-                              <input class="form-control py-4" type="email" formControlName="email" aria-describedby="emailHelp" placeholder="E-mail" />
+                              <input class="form-control py-4" type="email" formControlName="email" [(ngModel)]="pessoa.email" aria-describedby="emailHelp" placeholder="E-mail" />
                             </app-input>
                           </div>
                           <div class="row">

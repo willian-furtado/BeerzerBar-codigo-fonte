@@ -24,6 +24,10 @@ public class Pessoa {
     @Column(name = "nome", length = 150)
     private String nome;
 
+    @NotEmpty
+    @Column(name = "sobrenome", length = 150)
+    private String sobrenome;
+
     @NotNull
     @Column(name = "email", length = 150)
     private String email;

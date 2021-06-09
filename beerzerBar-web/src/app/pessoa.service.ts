@@ -1,3 +1,4 @@
+import { Funcionario } from './funcionario/funcionario';
 import { Pessoa } from './pessoa/pessoa';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -35,7 +36,7 @@ export class PessoaService {
       return this.http.delete<Pessoa[]>(`${API_BEERZER}/` + pessoa.id);
     }
 
-    save(pessoa: Pessoa): Observable<Pessoa>{
-     return this.http.post<Pessoa>(`${API_BEERZER}`, pessoa);
+    save(funcionario: Funcionario): Observable<Funcionario>{
+     return this.http.post<Funcionario>(`http://localhost:8080/api/funcionario`, funcionario);
     }
 }

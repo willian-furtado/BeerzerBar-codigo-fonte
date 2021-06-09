@@ -20,9 +20,10 @@
           <tr *ngFor="let produto of produtos">
             <td>{{produto.id}}</td>
             <td>{{produto.nome}}</td>
+            <td>{{produto.descricao}}</td>
             <td>{{produto.preco}}</td>
             <td>{{produto.quantidade}}</td>
-            <td>{{produto.descricao}}</td>
+            <td>{{produto.categoria}}</td>
             <td>
               <div class="lbtn">
                 <button class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#editModel">Editar </button>

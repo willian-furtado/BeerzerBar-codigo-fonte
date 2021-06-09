@@ -3,5 +3,5 @@ export class Cliente{
   public nome?: string;
   public email?: string;
   public cpf?: string;
-  public dataNascimento?: string;
+  public dataNascimento?: Date;
 }

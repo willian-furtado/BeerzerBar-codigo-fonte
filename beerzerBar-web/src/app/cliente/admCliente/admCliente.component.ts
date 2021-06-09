@@ -3,11 +3,8 @@ import { Pessoa } from './../../pessoa/pessoa';
 
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
-import { ClienteService } from './../../cliente.service';
 import { Cliente } from './../cliente';
 import { Component, OnInit } from '@angular/core';
-import { DataTablesModule } from 'angular-datatables';
-
 
 
 
