@@ -13,24 +13,16 @@ export class AdmProdutoComponent implements OnInit {
 
   produtos$!: Observable<Produto[]>;
   produto!: Produto;
-
+  produtos: Produto [] = [];
   constructor(private service: ProdutoService,
               private router: Router,
               private route: ActivatedRoute) { }
 
   ngOnInit() {
-
-    this.route.params.subscribe(produtos=>this.produtos$ = this.service.showProduct());
+    this.service.obterTodos().subscribe(rest => {
+      this.produtos = rest.values;
+    })
   }
-
-  OnRoute()
-  {
-
-  }
-
-OnEdit(produto: Produto){
-
-}
 
   OnDelete(produto: Produto)
   {

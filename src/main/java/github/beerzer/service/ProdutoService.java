@@ -6,6 +6,8 @@ import github.beerzer.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProdutoService {
 
@@ -20,5 +22,9 @@ public class ProdutoService {
         produtos.setPreco(Double.valueOf(produtoDTO.getPreco()));
         produtos.setCategoria(produtoDTO.getCategoria());
         return produtoRepository.save(produtos);
+    }
+
+    public List<Produtos> listarProdutos() {
+        return produtoRepository.findAll();
     }
 }

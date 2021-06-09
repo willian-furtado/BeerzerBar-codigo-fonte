@@ -13,8 +13,13 @@ export class ProdutoService {
 
   showProduct()
   {
-   return this.http.get<Produto[]>(`http://localhost:8080/api/produtos`,);
+   return this.http.get<Produto[]>(`http://localhost:8080/api/produtos/listagem`);
   }
+
+  obterTodos(): Observable<any> {
+    return this.http.get<Produto[]>(`http://localhost:8080/api/produtos/listagem`);
+  }
+
 
    /*Salva pedido*/
    save(produto: Produto): Observable<Produto> {

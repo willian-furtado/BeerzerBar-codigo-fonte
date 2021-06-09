@@ -10,15 +10,15 @@
                             <div class="form-group">
                               <label class="small mb-1" for="inputFirstName">Nome:</label>
                               <app-input errorMessage="Formato de nome incorreto" label="nome" >
-                                  <input class="form-control py-4" type="text" formControlName="nome" placeholder="Nome"  required/>
+                                  <input class="form-control py-4" type="text" [(ngModel)]="produto.nome" formControlName="nome" placeholder="Nome"  required/>
                               </app-input>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="small mb-1" for="inputLastName">Preço:</label>
+                                <label class="small mb-1">Preço:</label>
                                 <app-input errorMessage="Formato de preço incorreto" label="preco" >
-                                <input class="form-control py-4" type="text" formControlName="preco" placeholder="Preço"  required />
+                                <input class="form-control py-4" type="number" [(ngModel)]="produto.preco" formControlName="preco" placeholder="Preço"  required />
                               </app-input>
                             </div>
                         </div>
@@ -27,8 +27,8 @@
                               <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="small mb-1" for="inputCPF">Quantidade:</label>
-                                    <app-input errorMessage="Quantidade Incorreta" label="cpf" >
-                                    <input class="form-control py-4" type="number" min="1" formControlName="quantidade" placeholder="Quantidade" />
+                                    <app-input errorMessage="Quantidade Incorreta" label="quantidade" >
+                                    <input class="form-control py-4" type="number" [(ngModel)]="produto.quantidade" min="1" formControlName="quantidade" placeholder="Quantidade" />
                                   </app-input>
                                 </div>
                             </div>
@@ -36,7 +36,7 @@
                               <div class="form-group">
                                   <label class="small mb-1" for="inputData">Categoria:</label>
                                 <app-input errorMessage="Formato de Categoria incorreto" label="categoria" >
-                                  <input class="form-control py-4" type="text" formControlName="categoria" placeholder="Categoria" />
+                                  <input class="form-control py-4" type="text" [(ngModel)]="produto.categoria" formControlName="categoria" placeholder="Categoria" />
                                 </app-input>
                               </div>
                           </div>
@@ -44,7 +44,7 @@
                           <div class="form-group">
                               <label class="small mb-1" for="inputEmailAddress">Descrição:</label>
                             <app-input errorMessage="Formato de Descrição incorreto" label="descricao" >
-                              <input class="form-control py-4" type="text" formControlName="descricao" placeholder="Descrição" />
+                              <input class="form-control py-4" type="text" [(ngModel)]="produto.descricao" formControlName="descricao" placeholder="Descrição" />
                             </app-input>
                           </div>
                           <div class="row">

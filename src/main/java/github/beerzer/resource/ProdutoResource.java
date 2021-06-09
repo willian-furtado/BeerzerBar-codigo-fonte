@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("api/produtos")
@@ -18,17 +19,20 @@ public class ProdutoResource {
     @Autowired
     private final ProdutoService  produtoService;
 
-    @Autowired
-    private final ProdutoRepository produtoRepository;
 
-    public ProdutoResource(ProdutoService produtoService, ProdutoRepository produtoRepository) {
+    public ProdutoResource(ProdutoService produtoService) {
         this.produtoService = produtoService;
-        this.produtoRepository = produtoRepository;
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Produtos salvar(@RequestBody @Valid ProdutoDTO produtos){
         return produtoService.salvar(produtos);
+    }
+
+    @GetMapping("/listagem")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public List<Produtos> listarProdutos(){
+        return produtoService.listarProdutos();
     }
 }

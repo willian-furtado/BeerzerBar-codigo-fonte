@@ -10,7 +10,7 @@
                             <div class="form-group">
                               <label class="small mb-1" for="inputFirstName">Nome:</label>
                               <app-input errorMessage="Formato de nome incorreto" label="nome" >
-                                  <input class="form-control py-4" type="text" formControlName="nome" placeholder="Nome"  required/>
+                                  <input class="form-control py-4" type="text" [(ngModel)]="pedido.nome" formControlName="nome" placeholder="Nome"  required/>
                               </app-input>
                             </div>
                         </div>
@@ -18,7 +18,7 @@
                             <div class="form-group">
                                 <label class="small mb-1" for="inputLastName">Preço:</label>
                                 <app-input errorMessage="Formato de preço incorreto" label="preco" >
-                                <input class="form-control py-4" type="text" formControlName="preco" placeholder="Preço"  required />
+                                <input class="form-control py-4" type="text" formControlName="preco" [(ngModel)]="pedido.preco" placeholder="Preço"  required />
                               </app-input>
                             </div>
                         </div>
@@ -28,7 +28,7 @@
                                 <div class="form-group">
                                     <label class="small mb-1" for="inputCPF">Quantidade:</label>
                                     <app-input errorMessage="Quantidade Incorreta" label="cpf" >
-                                    <input class="form-control py-4" type="number" min="1" formControlName="quantidade" placeholder="Quantidade" />
+                                    <input class="form-control py-4" type="number" min="1" [(ngModel)]="pedido.quantidade" formControlName="quantidade" placeholder="Quantidade" />
                                   </app-input>
                                 </div>
                             </div>

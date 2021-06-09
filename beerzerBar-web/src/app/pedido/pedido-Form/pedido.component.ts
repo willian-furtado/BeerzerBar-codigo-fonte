@@ -16,7 +16,7 @@ export class PedidoComponent implements OnInit {
   pedidos$!: Observable<Pedido[]>;
   editForm!: FormGroup;
   id!: number;
-  pedido!: Pedido;
+  pedido: Pedido = new Pedido();
   quantidade!:number;
   preco!:number;
 
@@ -42,7 +42,7 @@ ngOnInit() {
     if(this.editForm.valid)
  {
     if(this.id == null){
-       this.service.save(this.editForm.value)
+       this.service.save(this.pedido)
         .subscribe(
       (suc) =>
     {
