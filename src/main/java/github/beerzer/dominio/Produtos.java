@@ -1,11 +1,15 @@
 package github.beerzer.dominio;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
 @Data
+@Getter
+@Setter
 public class Produtos {
 
     @Id
@@ -26,20 +30,5 @@ public class Produtos {
 
     @Column(name = "categoria", length = 150)
     private String categoria;
-
-    public void setNome(Object nome2) {
-    }
-
-    public void setDescricao(Object descricao2) {
-    }
-
-    public void setQuantidade(Object quantidade2) {
-    }
-
-    public void setPreco(Double valueOf) {
-    }
-
-    public void setCategoria(Object categoria2) {
-    }
 
 }

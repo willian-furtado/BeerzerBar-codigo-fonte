@@ -11,20 +11,5 @@ public class ProdutoDTO {
     private String nome;
     private Double preco;
     private Long quantidade;
-    public Object getQuantidade() {
-        return null;
-    }
-    public Object getNome() {
-        return null;
-    }
-    public Object getDescricao() {
-        return null;
-    }
-    public String getPreco() {
-        return null;
-    }
-    public Object getCategoria() {
-        return null;
-    }
 
 }

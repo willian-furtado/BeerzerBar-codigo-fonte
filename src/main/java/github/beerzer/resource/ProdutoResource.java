@@ -27,8 +27,7 @@ public class ProdutoResource {
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public Produtos salvar(@RequestBody @Valid ProdutoDTO produtos){
+    public Produtos salvar(@RequestBody ProdutoDTO produtos){
         return produtoService.salvar(produtos);
     }
 }
