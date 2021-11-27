@@ -8,6 +8,8 @@ import github.beerzer.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class ProdutoService {
 
@@ -42,4 +44,15 @@ public class ProdutoService {
         produtoDocument.setCategoria(produtos.getCategoria());
         return produtoDocument;
     }
+
+    public Iterable<ProdutoDocument> getAllProdutos(){
+        Iterable<ProdutoDocument> produtos = produtoDocumentRepository.findAll();
+        return produtos;
+    }
+
+    public Optional<ProdutoDocument> getById(Long id){
+        String identificador = id.toString();
+        return produtoDocumentRepository.findById(identificador);
+    }
+
 }

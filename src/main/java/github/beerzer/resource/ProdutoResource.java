@@ -1,5 +1,6 @@
 package github.beerzer.resource;
 
+import github.beerzer.document.ProdutoDocument;
 import github.beerzer.dominio.DTO.ProdutoDTO;
 import github.beerzer.dominio.Produtos;
 import github.beerzer.repository.ProdutoRepository;
@@ -9,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("api/produtos")
@@ -29,5 +32,15 @@ public class ProdutoResource {
     @PostMapping
     public Produtos salvar(@RequestBody ProdutoDTO produtos){
         return produtoService.salvar(produtos);
+    }
+
+    @GetMapping
+    public Iterable<ProdutoDocument> getAllProdutos(){
+        return produtoService.getAllProdutos();
+    }
+
+    @GetMapping("/{id}")
+    public Optional<ProdutoDocument> getById(@PathVariable("id") Long id){
+        return produtoService.getById(id);
     }
 }
